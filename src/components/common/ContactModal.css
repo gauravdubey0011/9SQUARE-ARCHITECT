@@ -1,0 +1,21 @@
+.contact-modal__subheading {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.9rem;
+  color: #6b6b6b;
+  margin: 0 0 20px;
+}
+
+.contact-modal__status {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.88rem;
+  text-align: center;
+  margin: 4px 0 0;
+}
+
+.contact-modal__status--success {
+  color: #2e7d32;
+}
+
+.contact-modal__status--error {
+  color: #c41818;
+}

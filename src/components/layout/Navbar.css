@@ -1,0 +1,104 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 20px 20px 0;
+  box-sizing: border-box;
+  background: transparent;
+  pointer-events: none; /* lets clicks pass through the empty space around the pill */
+}
+
+.navbar__pill {
+  pointer-events: auto; /* the pill itself still needs to be clickable */
+  max-width: 1500px;
+  margin: 0 auto;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  padding: 0 10px 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.179);
+  box-sizing: border-box;
+}
+
+.navbar__logo {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #1c1c1c;
+  text-decoration: none;
+}
+
+.navbar__cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  background-color: #1c1c1c;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.navbar__cta:hover {
+  background-color: #333333;
+}
+
+.navbar__cta-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 14px 0;
+  }
+  .navbar__pill {
+    height: 58px;
+    padding: 0 8px 0 20px;
+  }
+  .navbar__logo {
+    font-size: 1.15rem;
+  }
+  .navbar__cta {
+    font-size: 0.82rem;
+    padding: 0.6rem 1.1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 10px 0;
+  }
+  .navbar__pill {
+    height: 52px;
+    padding: 0 6px 0 16px;
+  }
+  .navbar__logo {
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+  }
+  .navbar__cta {
+    font-size: 0.72rem;
+    padding: 0.5rem 0.85rem;
+    gap: 5px;
+  }
+  .navbar__cta-icon {
+    font-size: 0.7rem;
+  }
+}

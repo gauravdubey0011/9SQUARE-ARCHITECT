@@ -1,0 +1,123 @@
+.onestop {
+  width: 100%;
+  padding: 60px 24px;
+  box-sizing: border-box;
+  background-color: #f3f3f5;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+.onestop__heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin: 0 0 16px;
+}
+
+.onestop__subheading {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1.05rem;
+  color: #4a4a4a;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  line-height: 1.5;
+}
+
+.onestop__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.onestop-card {
+  background-color: #fafafa;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.onestop-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.onestop-card__image-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.onestop-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.onestop-card:hover .onestop-card__image {
+  transform: scale(1.06);
+}
+
+.onestop-card__body {
+  padding: 20px 20px 24px;
+  position: relative;
+}
+
+.onestop-card__title {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin: 0 0 8px;
+}
+
+.onestop-card__description {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.9rem;
+  color: #6b6b6b;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.onestop-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin: 16px auto 0;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #e5e4e7;
+  color: #1c1c1c;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.onestop-card__arrow:hover {
+  background-color: #b3572e;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .onestop__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .onestop__grid {
+    grid-template-columns: 1fr;
+  }
+  .onestop__heading {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,695 @@
+/* =========================
+   MAIN PAGE
+========================= */
+
+.wardrobe-estimate {
+  width: 100%;
+  min-height: 100vh;
+
+  /* Prevent fixed navbar overlap */
+  padding: 110px 24px 60px;
+
+  background: #fafafa;
+  box-sizing: border-box;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.wardrobe-estimate__header {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.wardrobe-estimate__header h1 {
+  margin: 0 0 8px;
+
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.3;
+  font-weight: 500;
+
+  color: #111111;
+}
+
+.wardrobe-estimate__header h1 span {
+  color: #ed1c24;
+  font-weight: 700;
+}
+
+.wardrobe-estimate__header p {
+  margin: 0 0 16px;
+
+  color: #777777;
+  font-size: 1rem;
+}
+
+.wardrobe-estimate__step {
+  font-size: 0.95rem;
+  color: #222222;
+}
+
+.wardrobe-estimate__step strong {
+  color: #ed1c24;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.wardrobe-estimate__container {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  background: #ffffff;
+
+  border: 1px solid #dddddd;
+  border-radius: 14px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+.wardrobe-step {
+  width: 100%;
+  min-height: 480px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.wardrobe-step__content {
+  width: 100%;
+  max-width: 700px;
+
+  text-align: center;
+}
+
+.wardrobe-step__number {
+  display: inline-flex;
+
+  width: 44px;
+  height: 44px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  background: #fff0f0;
+  color: #ed1c24;
+
+  font-weight: 700;
+}
+
+.wardrobe-step h2 {
+  margin: 0 0 10px;
+
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.3;
+
+  color: #111111;
+}
+
+.wardrobe-step p {
+  margin: 0 0 35px;
+
+  color: #777777;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   HEIGHT OPTIONS
+========================= */
+
+.height-options {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   WARDROBE TYPE
+========================= */
+
+.wardrobe-type-options {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.wardrobe-type-card {
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.wardrobe-icon {
+  font-size: 2.5rem;
+  color: #ed1c24;
+}
+
+.wardrobe-type-card span {
+  color: #777777;
+  font-size: 0.85rem;
+}
+
+
+/* =========================
+   MATERIAL OPTIONS
+========================= */
+
+.material-options {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.material-card {
+  min-height: 70px;
+}
+
+
+/* =========================
+   GENERAL OPTION BUTTON
+========================= */
+
+.wardrobe-option {
+  width: 100%;
+
+  padding: 15px;
+
+  border: 1px solid #ed1c24;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #ed1c24;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.wardrobe-option:hover {
+  background: #fff2f2;
+  transform: translateY(-2px);
+}
+
+.wardrobe-option.active {
+  background: #ed1c24;
+  color: #ffffff;
+}
+
+.wardrobe-option.active .wardrobe-icon,
+.wardrobe-option.active span {
+  color: #ffffff;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.wardrobe-navigation {
+  display: flex;
+
+  justify-content: center;
+  gap: 15px;
+
+  margin-top: 40px;
+}
+
+.wardrobe-next-button,
+.wardrobe-back-button,
+.wardrobe-submit-button {
+  min-height: 52px;
+
+  padding: 0 28px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.wardrobe-next-button,
+.wardrobe-submit-button {
+  border: none;
+
+  background: #ed1c24;
+  color: #ffffff;
+}
+
+.wardrobe-next-button:hover:not(:disabled),
+.wardrobe-submit-button:hover:not(:disabled) {
+  background: #d9151c;
+}
+
+.wardrobe-next-button:disabled,
+.wardrobe-submit-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.wardrobe-back-button {
+  border: 1px solid #ed1c24;
+
+  background: #ffffff;
+  color: #ed1c24;
+}
+
+
+/* =========================
+   CONTACT STEP
+========================= */
+
+.wardrobe-contact-step {
+  padding: 0;
+}
+
+.wardrobe-contact-card {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  width: 100%;
+}
+
+
+/* =========================
+   LEFT CONTACT AREA
+========================= */
+
+.wardrobe-contact-info {
+  padding: 50px 40px;
+
+  background: linear-gradient(
+    135deg,
+    #fff4f4,
+    #fffafa
+  );
+
+  box-sizing: border-box;
+}
+
+.contact-decoration {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  border-radius: 50%;
+
+  background: #ed1c24;
+  color: #ffffff;
+
+  font-size: 1.5rem;
+}
+
+.wardrobe-contact-tag {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #ed1c24;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+.wardrobe-contact-info h2 {
+  margin: 0 0 15px;
+
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.2;
+
+  color: #111111;
+}
+
+.wardrobe-contact-info p {
+  margin: 0 0 30px;
+
+  color: #666666;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.wardrobe-summary {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.wardrobe-summary div {
+  display: flex;
+
+  justify-content: space-between;
+  gap: 15px;
+
+  padding: 12px 14px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  border-radius: 8px;
+}
+
+.wardrobe-summary span {
+  color: #777777;
+  font-size: 0.85rem;
+}
+
+.wardrobe-summary strong {
+  color: #ed1c24;
+  font-size: 0.9rem;
+}
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+.wardrobe-contact-form {
+  padding: 50px 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  box-sizing: border-box;
+}
+
+.wardrobe-contact-form h3 {
+  margin: 0;
+
+  font-size: 1.7rem;
+  color: #111111;
+}
+
+.wardrobe-contact-form > p {
+  margin: -6px 0 10px;
+
+  color: #777777;
+  font-size: 0.9rem;
+}
+
+.wardrobe-form-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.wardrobe-form-field label {
+  color: #333333;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.wardrobe-form-field input,
+.wardrobe-form-field select {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 14px;
+
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+
+  box-sizing: border-box;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  outline: none;
+}
+
+.wardrobe-form-field input:focus,
+.wardrobe-form-field select:focus {
+  border-color: #ed1c24;
+}
+
+.wardrobe-contact-buttons {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+.wardrobe-contact-buttons button {
+  flex: 1;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.wardrobe-success {
+  padding: 14px;
+
+  text-align: center;
+
+  background: #edf7ee;
+  color: #2e7d32;
+
+  border-radius: 8px;
+
+  font-size: 0.9rem;
+}
+
+.wardrobe-error {
+  padding: 14px;
+
+  text-align: center;
+
+  background: #fff0f0;
+  color: #c41818;
+
+  border-radius: 8px;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .wardrobe-estimate {
+    padding: 100px 20px 50px;
+  }
+
+  .wardrobe-estimate__container {
+    max-width: 700px;
+  }
+
+  .wardrobe-contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .wardrobe-contact-info {
+    padding: 40px 30px;
+  }
+
+  .wardrobe-contact-form {
+    padding: 40px 30px;
+  }
+
+  .wardrobe-step {
+    padding: 35px 25px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  /* Prevent navbar overlap */
+  .wardrobe-estimate {
+    padding: 90px 15px 40px;
+  }
+
+  .wardrobe-estimate__header {
+    margin-bottom: 20px;
+  }
+
+  .wardrobe-estimate__header h1 {
+    font-size: 1.4rem;
+    line-height: 1.35;
+  }
+
+  .wardrobe-estimate__header p {
+    font-size: 0.9rem;
+  }
+
+  .wardrobe-estimate__step {
+    font-size: 0.85rem;
+  }
+
+
+  /* Main container */
+  .wardrobe-estimate__container {
+    border-radius: 10px;
+  }
+
+  .wardrobe-step {
+    min-height: auto;
+
+    padding: 35px 16px;
+  }
+
+  .wardrobe-step h2 {
+    font-size: 1.45rem;
+  }
+
+  .wardrobe-step p {
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+  }
+
+
+  /* Height */
+  .height-options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+
+  /* Wardrobe types */
+  .wardrobe-type-options {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .wardrobe-type-card {
+    min-height: 130px;
+  }
+
+
+  /* Material */
+  .material-options {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .material-card {
+    min-height: 55px;
+  }
+
+
+  /* Navigation */
+  .wardrobe-navigation {
+    flex-direction: column-reverse;
+    gap: 10px;
+
+    margin-top: 28px;
+  }
+
+  .wardrobe-navigation button {
+    width: 100%;
+  }
+
+
+  /* Contact section */
+  .wardrobe-contact-info {
+    padding: 35px 20px;
+  }
+
+  .wardrobe-contact-info h2 {
+    font-size: 1.7rem;
+  }
+
+  .wardrobe-contact-form {
+    padding: 35px 20px;
+  }
+
+  .wardrobe-contact-form h3 {
+    font-size: 1.5rem;
+  }
+
+
+  /* Prevent mobile browser zoom */
+  .wardrobe-form-field input,
+  .wardrobe-form-field select {
+    font-size: 16px;
+  }
+
+  .wardrobe-contact-buttons {
+    flex-direction: column-reverse;
+  }
+
+  .wardrobe-contact-buttons button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,107 @@
+.contact {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.contact__heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #1c1c1c;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.contact__subheading {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  color: #6b6b6b;
+  text-align: center;
+  margin: 0 0 36px;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact__input,
+.contact__textarea {
+  width: 100%;
+  padding: 0.95rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #e4d4f7;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.95rem;
+  color: #1c1c1c;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.contact__input::placeholder,
+.contact__textarea::placeholder {
+  color: #8a8390;
+}
+
+.contact__submit {
+  margin-top: 8px;
+  padding: 1rem 0;
+  background-color: #7b3fa0;
+  color: #ffffff;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact__submit:hover:not(:disabled) {
+  background-color: #6a3689;
+}
+
+.contact__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact__status {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 4px 0 0;
+}
+
+.contact__status--success {
+  color: #2e7d32;
+}
+
+.contact__status--error {
+  color: #c41818;
+}
+
+.contact__select {
+  width: 100%;
+  padding: 0.95rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #e4d4f7;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.95rem;
+  color: #1c1c1c;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238a8390' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+}
+
+.contact__select:invalid {
+  color: #8a8390;
+}

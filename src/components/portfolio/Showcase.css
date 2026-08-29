@@ -1,0 +1,266 @@
+.showcase {
+  width: 100%;
+  padding: 60px 24px;
+  box-sizing: border-box;
+  background-color: #E6E6FA;
+  color: #1c1c1c;
+  overflow: hidden;
+}
+
+.showcase__heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #1c1c1c;
+  margin: 0 0 32px;
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+.showcase__desktop {
+  display: block;
+}
+
+.showcase__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.showcase__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  animation: showcaseFadeIn 0.5s ease;
+}
+
+@keyframes showcaseFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.showcase__arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: #fbe9ea;
+  color: #b3572e;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.2s ease;
+}
+
+.showcase__arrow:hover {
+  background-color: #f5d2d4;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.showcase-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.showcase-card__image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.showcase-card__image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.showcase-card__image.active {
+  opacity: 1;
+}
+
+
+/* =========================
+   IMAGE DOTS
+========================= */
+
+.showcase-card__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 7px;
+
+  z-index: 2;
+}
+
+.showcase-card__dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.6);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.showcase-card__dot.active {
+  background: #ffffff;
+  transform: scale(1.3);
+}
+
+
+/* =========================
+   CAPTION
+========================= */
+
+.showcase-card__caption {
+  margin: 16px 0 0;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  color: #1c1c1c;
+  line-height: 1.4;
+}
+
+
+/* =========================
+   MOBILE / TABLET SCROLL
+========================= */
+
+.showcase__mobile-scroll {
+  display: none;
+}
+
+
+/* =========================
+   TABLET + MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .showcase {
+    padding: 50px 0 50px 24px;
+  }
+
+  .showcase__heading {
+    padding-right: 24px;
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+
+
+  /* Hide desktop arrows and desktop slider */
+  .showcase__desktop {
+    display: none;
+  }
+
+
+  /* Show all 6 cards horizontally */
+  .showcase__mobile-scroll {
+    display: flex;
+    gap: 16px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding-right: 24px;
+    padding-bottom: 12px;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  /* Each card takes most of screen */
+  .showcase__mobile-scroll .showcase-card {
+    flex: 0 0 75%;
+    scroll-snap-align: start;
+  }
+
+
+  /* Optional scrollbar hiding */
+  .showcase__mobile-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .showcase__mobile-scroll {
+    scrollbar-width: none;
+  }
+}
+
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media (max-width: 600px) {
+
+  .showcase {
+    padding: 40px 0 40px 16px;
+  }
+
+  .showcase__heading {
+    padding-right: 16px;
+    font-size: 1.35rem;
+  }
+
+  .showcase__mobile-scroll {
+    gap: 14px;
+    padding-right: 16px;
+  }
+
+
+  /* One card almost fills mobile screen */
+  .showcase__mobile-scroll .showcase-card {
+    flex: 0 0 85%;
+  }
+
+  .showcase-card__caption {
+    font-size: 0.95rem;
+  }
+
+}

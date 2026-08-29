@@ -1,0 +1,28 @@
+.cursor-trail-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-sparkle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  fill: #b3572e;
+  pointer-events: none;
+}
+
+.cursor-sparkle--1 {
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px; /* center on cursor point */
+  opacity: 0.95;
+}
+
+.cursor-sparkle--2 {
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  opacity: 0.6;
+}

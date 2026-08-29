@@ -1,0 +1,140 @@
+.visitus {
+  width: 100%;
+  padding: 60px 24px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+.visitus__heading {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #1c1c1c;
+  margin: 0 0 24px;
+}
+
+.visitus__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.visitus__tab {
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid #d8d8d8;
+  background-color: #ffffff;
+  color: #4a4a4a;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.visitus__tab.active {
+  border-color: #e26464;
+  color: #e26464;
+}
+
+.visitus__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.visitus__image-wrap {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.visitus__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.visitus__image-label {
+  position: absolute;
+  top: 16px;
+  right: 0;
+  background-color: #1c1c1c;
+  color: #ffffff;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+}
+
+.visitus__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.visitus__detail-heading {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #1c1c1c;
+  margin: 20px 0 6px;
+}
+
+.visitus__detail-heading:first-child {
+  margin-top: 0;
+}
+
+.visitus__detail-text {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.visitus__detail-row {
+  display: flex;
+  gap: 60px;
+}
+
+.visitus__cta-wrap {
+  margin-top: 48px;
+}
+
+.visitus__cta {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-block;
+  background-color: #e02020;
+  color: #ffffff;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 1rem 2.6rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.visitus__cta:hover {
+  background-color: #c41818;
+}
+
+@media (max-width: 900px) {
+  .visitus__content {
+    grid-template-columns: 1fr;
+  }
+  .visitus__heading {
+    font-size: 1.5rem;
+  }
+}
