@@ -1,64 +1,103 @@
 .kitchen-estimate {
   min-height: 100vh;
-  background: #ffffff;
-  padding: 110px 50px 24px;
+  background: linear-gradient(180deg, #fdfdfd 0%, #f5f0fb 100%);
+  padding: 110px 50px 60px;
   box-sizing: border-box;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
 }
 
 .kitchen-estimate__header {
+  max-width: 900px;
+  margin: 0 auto 36px;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .kitchen-estimate__header h1 {
-  font-family: Inter, sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   margin: 0 0 10px;
+  color: #111111;
 }
 
 .kitchen-estimate__header h1 span {
   color: #e52b2b;
+  font-weight: 700;
 }
 
 .kitchen-estimate__header p {
   color: #6b6b6b;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   margin: 0 0 16px;
 }
 
 .kitchen-estimate__progress {
-  font-size: 1rem;
-  letter-spacing: 1px;
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background-color: #fff0f0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #222222;
 }
 
 .kitchen-estimate__container {
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  border: 1px solid #dddddd;
-  border-radius: 12px;
+  border-radius: 16px;
   background: #ffffff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
 .estimate-step {
-  padding: 30px;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  animation: kitchenStepFadeIn 0.35s ease;
+}
+
+@keyframes kitchenStepFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .estimate-step h2 {
   font-size: 1.3rem;
-  margin: 0 0 35px;
+  font-weight: 600;
+  margin: 0 0 32px;
+  color: #111111;
 }
 
+/* BHK options */
 .bhk-options {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 20px;
 }
 
 .radio-option {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1.1rem;
+  gap: 10px;
+  font-size: 1.05rem;
   cursor: pointer;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.radio-option:hover {
+  background-color: #faf7ff;
 }
 
 .radio-option input,
@@ -69,10 +108,11 @@
 .custom-radio {
   width: 22px;
   height: 22px;
-  border: 2px solid #777777;
+  border: 2px solid #b0aab8;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
+  transition: border-color 0.2s ease, border-width 0.2s ease;
 }
 
 .radio-option--active .custom-radio,
@@ -80,37 +120,46 @@
   border: 6px solid #e52b2b;
 }
 
+.radio-option--active {
+  background-color: #fff2f2;
+}
+
+/* Kitchen shape */
 .shape-options {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 20px;
 }
 
 .shape-card {
-  border: 2px solid transparent;
-  padding: 15px;
+  border: 2px solid #ececec;
+  padding: 16px;
   cursor: pointer;
-  border-radius: 10px;
-  transition: 0.2s ease;
+  border-radius: 12px;
+  transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .shape-card:hover {
-  background: #fafafa;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .shape-card--active {
   border-color: #e52b2b;
+  box-shadow: 0 8px 20px rgba(229, 43, 43, 0.12);
 }
 
 .shape-image-placeholder {
-  height: 180px;
-  background: #f2f3f5;
+  height: 170px;
+  background: #f6f3fb;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #7b3fa0;
+  margin-bottom: 14px;
+  border-radius: 10px;
 }
 
 .shape-label {
@@ -118,21 +167,28 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
 }
 
+/* Wall size */
 .wall-size-section {
-  margin-top: 40px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid #ececec;
 }
 
 .wall-size-section h3 {
-  margin-bottom: 20px;
+  margin: 0 0 18px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1c1c1c;
 }
 
 .wall-size-grid {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .wall-size-row {
@@ -144,78 +200,120 @@
 .wall-label {
   min-width: 70px;
   font-weight: 600;
+  color: #1c1c1c;
 }
 
 .wall-size-row select {
-  padding: 8px;
-  border: 1px solid #bbbbbb;
-  border-radius: 6px;
-  font-size: 1rem;
+  padding: 9px 10px;
+  border: 1.5px solid #d8d8d8;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
 }
 
+.wall-size-row select:focus {
+  border-color: #7b3fa0;
+  outline: none;
+}
+
+.wall-size-row span:not(.wall-label) {
+  font-size: 0.85rem;
+  color: #6b6b6b;
+}
+
+/* Cabinet material */
 .material-options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 14px;
 }
 
 .material-option {
-  border: 1px solid #cccccc;
+  border: 1.5px solid #d8d8d8;
   padding: 16px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 0.98rem;
+  transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.material-option:hover {
+  transform: translateY(-2px);
 }
 
 .material-option input {
   margin-right: 10px;
+  accent-color: #e52b2b;
 }
 
 .material-option--active {
-  border: 2px solid #e52b2b;
+  border-color: #e52b2b;
   background: #fff8f8;
+  box-shadow: 0 6px 16px rgba(229, 43, 43, 0.1);
 }
 
+/* Step navigation buttons */
 .step-buttons {
   display: flex;
-  gap: 15px;
-  margin-top: 40px;
+  gap: 14px;
+  margin-top: 36px;
 }
 
 .next-button,
 .back-button {
   border: none;
-  padding: 15px 40px;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 14px 36px;
+  border-radius: 10px;
+  font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .next-button {
   background: #e52b2b;
-  color: white;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(229, 43, 43, 0.25);
+}
+
+.next-button:hover:not(:disabled) {
+  background: #cf2323;
+  transform: translateY(-2px);
 }
 
 .next-button:disabled {
   opacity: 0.5;
+  box-shadow: none;
   cursor: not-allowed;
 }
 
 .back-button {
-  background: #eeeeee;
-  color: #222222;
+  background: #f2eefa;
+  color: #4a4a4a;
 }
 
+.back-button:hover {
+  background: #e7ddf5;
+}
+
+/* Contact / designer step */
 .designer-text {
   color: #666666;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
 
 .kitchen-contact-form {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 6px;
+}
+
+.kitchen-field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
 }
 
 .kitchen-contact-form input,
@@ -223,32 +321,110 @@
   width: 100%;
   padding: 14px;
   box-sizing: border-box;
-  border: 1px solid #cccccc;
-  border-radius: 7px;
+  border: 1.5px solid #d8d8d8;
+  border-radius: 8px;
   font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kitchen-contact-form input:focus,
+.kitchen-contact-form select:focus {
+  border-color: #e52b2b;
+  box-shadow: 0 0 0 3px rgba(229, 43, 43, 0.1);
+  outline: none;
+}
+
+.kitchen-contact-form input.input-error,
+.kitchen-contact-form select.input-error {
+  border-color: #d9151c;
+  background-color: #fff8f8;
+}
+
+.field-error-message {
+  font-size: 0.78rem;
+  color: #d9151c;
+  margin: 2px 2px 0;
 }
 
 .form-success {
   color: #218838;
   text-align: center;
+  padding: 14px;
+  background: #edf7ee;
+  border-radius: 8px;
+  margin-top: 6px;
 }
 
 .form-error {
   color: #d32f2f;
   text-align: center;
+  padding: 14px;
+  background: #fff0f0;
+  border-radius: 8px;
+  margin-top: 6px;
 }
 
-@media (max-width: 768px) {
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1440px) {
+  .kitchen-estimate__container {
+    max-width: 1100px;
+  }
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media (max-width: 1100px) {
+  .kitchen-estimate__container {
+    max-width: 900px;
+  }
+
+  .estimate-step {
+    padding: 34px 30px;
+  }
+
+  .shape-image-placeholder {
+    height: 150px;
+  }
+}
+
+/* =========================
+   TABLET LANDSCAPE
+========================= */
+
+@media (max-width: 900px) {
+  .kitchen-estimate {
+    padding: 100px 24px 50px;
+  }
+
   .bhk-options {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .shape-options {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .material-options {
     grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   TABLET PORTRAIT
+========================= */
+
+@media (max-width: 768px) {
+  .kitchen-estimate__header h1 {
+    font-size: 1.6rem;
+  }
+
+  .estimate-step {
+    padding: 28px 22px;
   }
 
   .wall-size-row {
@@ -256,79 +432,21 @@
   }
 }
 
-
-/* =========================
-   LAPTOP / DESKTOP
-========================= */
-
-.kitchen-estimate__container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.estimate-step {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.kitchen-estimate__header {
-  max-width: 900px;
-  margin: 0 auto 40px;
-  text-align: center;
-}
-
-.kitchen-estimate__header h1 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.2;
-}
-
-.kitchen-estimate__header p {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 900px) {
-
-  .kitchen-estimate {
-    padding: 100px 20px 50px;
-  }
-
-  .shape-options {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .designer-card {
-    grid-template-columns: 1fr;
-  }
-
-  .designer-card__info,
-  .designer-card__form {
-    padding: 35px 30px;
-  }
-}
-
-
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 600px) {
-
   .kitchen-estimate {
     padding: 85px 15px 40px;
   }
 
   .kitchen-estimate__header {
-    margin-bottom: 25px;
+    margin-bottom: 24px;
   }
 
   .kitchen-estimate__header h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .kitchen-estimate__header p {
@@ -338,46 +456,31 @@
 
   .kitchen-estimate__progress {
     font-size: 0.75rem;
+    padding: 5px 14px;
   }
 
-
-  /* STEP CARD */
-
   .estimate-step {
-    padding: 20px 15px;
+    padding: 22px 16px;
   }
 
   .estimate-step h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.4;
   }
 
-
-  /* BHK OPTIONS */
-
   .bhk-options {
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
-
-  /* KITCHEN SHAPE */
+  .radio-option {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
 
   .shape-options {
     grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .shape-card {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-
-  /* WALL SIZE */
-
-  .wall-size-grid {
-    width: 100%;
+    gap: 14px;
   }
 
   .wall-size-row {
@@ -389,7 +492,7 @@
 
   .wall-label {
     grid-column: 1 / -1;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
 
   .wall-size-row span:not(.wall-label) {
@@ -400,75 +503,80 @@
     width: 100%;
   }
 
-
-  /* MATERIAL */
-
   .material-options {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
-
-  /* BUTTONS */
-
   .step-buttons {
-    display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    margin-top: 28px;
   }
 
   .step-buttons button {
     width: 100%;
   }
 
+  .kitchen-contact-form input,
+  .kitchen-contact-form select {
+    font-size: 16px; /* prevents iOS auto-zoom */
+  }
+}
 
-  /* DESIGNER FORM */
+/* =========================
+   SMALL MOBILE
+========================= */
 
-  .designer-step {
-    padding: 0;
+@media (max-width: 380px) {
+  .kitchen-estimate {
+    padding: 80px 12px 32px;
   }
 
-  .designer-card {
-    border-radius: 14px;
+  .kitchen-estimate__header h1 {
+    font-size: 1.25rem;
   }
 
-  .designer-card__info,
-  .designer-card__form {
-    padding: 25px 18px;
+  .kitchen-estimate__header p {
+    font-size: 0.82rem;
   }
 
-  .designer-card__info h2 {
-    font-size: 1.7rem;
+  .estimate-step {
+    padding: 18px 12px;
   }
 
-  .designer-card__description {
-    font-size: 0.9rem;
+  .estimate-step h2 {
+    font-size: 1.05rem;
   }
 
-  .designer-card__summary {
-    padding: 15px;
+  .shape-image-placeholder {
+    height: 120px;
+    font-size: 1rem;
   }
 
-  .designer-summary-row {
-    font-size: 0.8rem;
-    flex-wrap: wrap;
+  .radio-option,
+  .shape-label {
+    font-size: 0.88rem;
   }
 
-  .designer-form-header h3 {
-    font-size: 1.4rem;
+  .material-option {
+    padding: 12px;
+    font-size: 0.88rem;
   }
 
-  .designer-form-buttons {
-    flex-direction: column;
-  }
-
-  .designer-back-button,
-  .designer-submit-button {
-    width: 100%;
-  }
-
-  .form-field input,
-  .form-field select {
+  .kitchen-contact-form input,
+  .kitchen-contact-form select {
+    padding: 12px;
     font-size: 16px;
+  }
+
+  .field-error-message {
+    font-size: 0.72rem;
+  }
+
+  .next-button,
+  .back-button {
+    padding: 12px 24px;
+    font-size: 0.88rem;
   }
 }

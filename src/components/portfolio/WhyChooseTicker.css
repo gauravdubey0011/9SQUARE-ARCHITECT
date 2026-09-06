@@ -1,4 +1,4 @@
-.ticker-section {
+/* .ticker-section {
   width: 100%;
   padding: 50px 0 0;
   box-sizing: border-box;
@@ -58,5 +58,221 @@
   .ticker__item {
     font-size: 0.9rem;
     padding: 0 24px;
+  }
+} */
+
+.why-choose-section {
+  width: 100%;
+  padding: 48px 0 55px;
+  background-color: #efe6fa;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.why-choose-section__heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1c1c1c;
+  text-align: center;
+  margin: 0 0 58px;
+}
+
+.why-choose-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.why-choose-track {
+  display: flex;
+  align-items: flex-start;
+  width: max-content;
+
+  animation: whyChooseMove 10s linear infinite;
+}
+
+/* Pause when hovered */
+.why-choose-slider:hover .why-choose-track {
+  animation-play-state: paused;
+}
+
+.why-choose-item {
+  flex: 0 0 16.6667%;
+  width: 16.6667%;
+  min-width: 120px;
+
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 4px;
+}
+
+/* Icon */
+.why-choose-item__icon {
+  width: 105px;
+  height: 105px;
+  margin: 0 auto 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-choose-item__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Temporary icon placeholder */
+.why-choose-item__icon-placeholder {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px dashed #999;
+  border-radius: 12px;
+
+  color: #777;
+  font-size: 0.8rem;
+}
+
+/* Text */
+.why-choose-item__title {
+  margin: 0;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+
+  color: #333;
+}
+
+/*
+   Move exactly half of the complete track.
+   Since the second half is an exact duplicate
+   of the first half, the loop is seamless.
+*/
+@keyframes whyChooseMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1024px) {
+  .why-choose-section {
+    padding: 42px 0 48px;
+  }
+
+  .why-choose-section__heading {
+    font-size: 1.8rem;
+    margin-bottom: 45px;
+  }
+
+  .why-choose-item {
+    min-width: 120px;
+    padding: 0 4px;
+  }
+
+  .why-choose-item__icon {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 18px;
+  }
+
+  .why-choose-item__icon-placeholder {
+    width: 75px;
+    height: 75px;
+  }
+
+  .why-choose-item__title {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+  .why-choose-section {
+    padding: 35px 0 42px;
+  }
+
+  .why-choose-section__heading {
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+  }
+
+  .why-choose-track {
+    animation-duration: 8s;
+  }
+
+  .why-choose-item {
+    min-width: 150px;
+    padding: 0 15px;
+  }
+
+  .why-choose-item__icon {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 16px;
+  }
+
+  .why-choose-item__icon-placeholder {
+    width: 65px;
+    height: 65px;
+  }
+
+  .why-choose-item__title {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+
+@media (max-width: 480px) {
+  .why-choose-section {
+    padding: 30px 0 35px;
+  }
+
+  .why-choose-section__heading {
+    font-size: 1.45rem;
+    margin-bottom: 30px;
+  }
+
+  .why-choose-track {
+    animation-duration: 7s;
+  }
+
+  .why-choose-item {
+    min-width: 135px;
+    padding: 0 12px;
+  }
+
+  .why-choose-item__icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .why-choose-item__title {
+    font-size: 0.8rem;
   }
 }

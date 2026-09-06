@@ -1,0 +1,96 @@
+.architecture-intro {
+  width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 70px 6vw 75px;
+}
+
+.architecture-intro__container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.architecture-intro__heading {
+  margin: 0 0 52px;
+  text-align: center;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.3;
+
+  color: #172b45;
+}
+
+.architecture-intro__text {
+  margin: 0;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: #7c7c7c;
+  text-align: left;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .architecture-intro {
+    padding: 55px 32px 60px;
+  }
+
+  .architecture-intro__heading {
+    font-size: 1.55rem;
+    margin-bottom: 38px;
+  }
+
+  .architecture-intro__text {
+    font-size: 1.08rem;
+    line-height: 1.55;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .architecture-intro {
+    padding: 45px 20px 50px;
+  }
+
+  .architecture-intro__heading {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    margin-bottom: 28px;
+  }
+
+  .architecture-intro__text {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .architecture-intro {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .architecture-intro__heading {
+    font-size: 1.2rem;
+  }
+
+  .architecture-intro__text {
+    font-size: 0.92rem;
+  }
+}

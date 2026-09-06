@@ -22,19 +22,19 @@ const cards = [
     internal: true,
   },
   {
-    image: card3,
-    title: 'Luxury Interiors',
-    description: 'Tailored interiors that redefine elegance',
-    link: 'https://google.com',
-    internal: false,
-  },
-  {
-    image: card4,
-    title: 'Value Interiors',
-    description: 'Quality interiors at very affordable prices',
-    link: 'https://google.com',
-    internal: false,
-  },
+  image: card3,
+  title: 'Kitchen Interiors',
+  description: 'Tailored interiors that redefine elegance',
+  link: '/interiors/luxury-interiors',
+  internal: true,
+},
+{
+  image: card4,
+  title: 'Wardrobe Interiors',
+  description: 'Quality interiors at very affordable prices',
+  link: '/interiors/value-interiors',
+  internal: true,
+},
 ];
 
 export default function OneStopShop() {

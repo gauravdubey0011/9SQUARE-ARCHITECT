@@ -14,26 +14,6 @@ import wardrobeBadge from '../../assets/icons/calculator.png';
 
 
 const flipWords = ['Full Home', 'Kitchen', 'Wardrobe'];
-
-// const cards = [
-//   {
-//     title: 'Full Home Interior',
-//     description: 'Know the estimate price for your full home interiors',
-//     link: '/estimate/home-interior',
-//   },
-//   {
-//     title: 'Kitchen',
-//     description: 'Get an approximate costing for your kitchen interior.',
-//     link: '/estimate/kitchen',
-//   },
-//   {
-//     title: 'Wardrobe',
-//     description: 'Our estimate for your dream wardrobe',
-//     link: '/estimate/wardrobe',
-//   },
-// ];
-
-
 const cards = [
   {
     title: 'Full Home Interior',

@@ -1,0 +1,135 @@
+.architecture-connect {
+  width: 100%;
+  background-color: #eee7f8;
+  box-sizing: border-box;
+  padding: 55px 24px 60px;
+}
+
+.architecture-connect__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.architecture-connect__heading {
+  margin: 0 0 22px;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  line-height: 1.4;
+
+  color: #5d5d66;
+  text-align: center;
+}
+
+.architecture-connect__button {
+  width: 195px;
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 10px 0 6px;
+
+  border: none;
+  border-bottom: 1px solid #77717f;
+  border-radius: 0;
+
+  background: transparent;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+
+  color: #29252f;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.architecture-connect__button:hover {
+  border-color: #7b3fa0;
+  color: #7b3fa0;
+}
+
+.architecture-connect__arrow {
+  font-size: 1.7rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.architecture-connect__button:hover .architecture-connect__arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .architecture-connect {
+    padding: 50px 28px 55px;
+  }
+
+  .architecture-connect__heading {
+    font-size: 1.4rem;
+  }
+
+  .architecture-connect__button {
+    width: 185px;
+    font-size: 1rem;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .architecture-connect {
+    padding: 42px 20px 48px;
+  }
+
+  .architecture-connect__heading {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .architecture-connect__button {
+    width: 175px;
+    min-height: 46px;
+    font-size: 0.95rem;
+  }
+
+  .architecture-connect__arrow {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .architecture-connect {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .architecture-connect__heading {
+    font-size: 1.05rem;
+  }
+}

@@ -1,0 +1,85 @@
+.architectural-page {
+  width: 100%;
+
+  min-height: 100vh;
+
+  background-color: #f5f0fb;
+}
+
+
+.architectural-page__hero {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 100px 24px 60px;
+
+  box-sizing: border-box;
+}
+
+
+.architectural-page__content {
+  max-width: 850px;
+}
+
+
+.architectural-page__eyebrow {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  color: #7b3fa0;
+
+  margin: 0 0 20px;
+}
+
+
+.architectural-page__heading {
+  font-family: 'Fraunces', Georgia, serif;
+
+  font-size: clamp(3rem, 7vw, 6rem);
+
+  font-weight: 600;
+
+  color: #1c1c1c;
+
+  margin: 0 0 20px;
+}
+
+
+.architectural-page__description {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+
+  font-size: 1.1rem;
+
+  line-height: 1.6;
+
+  color: #5f5f5f;
+
+  margin: 0 auto;
+
+  max-width: 600px;
+}
+
+
+@media (max-width: 768px) {
+
+  .architectural-page__hero {
+    padding-top: 90px;
+  }
+
+  .architectural-page__description {
+    font-size: 1rem;
+  }
+
+}

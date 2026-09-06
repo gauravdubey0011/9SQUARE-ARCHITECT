@@ -1,5 +1,6 @@
 import CategoryHero from '../components/category/CategoryHero';
 import CategoryGallery from '../components/category/CategoryGallery';
+import Footer from '../components/layout/Footer';
 
 import heroImage from '../assets/full-home-interiors/home2.avif';
 import img1 from '../assets/full-home-interiors/home1.avif';
@@ -41,6 +42,7 @@ export default function FullHomeInteriors() {
           sectionHeading="Popular Full Home Designs"
           items={homeDesigns}
         />
+        <Footer/>
       </>
     );
 }

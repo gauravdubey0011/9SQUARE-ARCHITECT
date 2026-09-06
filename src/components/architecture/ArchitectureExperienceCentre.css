@@ -1,0 +1,376 @@
+.architecture-experience {
+  width: 100%;
+  padding: 70px 24px 80px;
+  box-sizing: border-box;
+  background-color: #faf7ff;
+}
+
+.architecture-experience__container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   LEFT INFORMATION
+========================================= */
+
+.architecture-experience__info {
+  min-width: 0;
+}
+
+.architecture-experience__heading {
+  margin: 0 0 38px;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 2.35rem;
+  font-weight: 500;
+  line-height: 1.2;
+
+  color: #171717;
+}
+
+
+.architecture-experience__details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+
+.architecture-experience__detail h3 {
+  margin: 0 0 9px;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+
+  color: #171717;
+}
+
+
+.architecture-experience__detail p {
+  margin: 0;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+
+  color: #5d5764;
+}
+
+
+/* =========================================
+   TIMINGS + CONTACT
+========================================= */
+
+.architecture-experience__two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.architecture-experience__button {
+  margin-top: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+  min-width: 230px;
+
+  padding: 15px 28px;
+
+  border: none;
+  border-radius: 999px;
+
+  background-color: #7b3fa0;
+  color: #ffffff;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.architecture-experience__button span {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+
+.architecture-experience__button:hover {
+  background-color: #6a3689;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   SLIDESHOW
+========================================= */
+
+.architecture-experience__slider {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1.25 / 1;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background-color: #e9e3f1;
+
+  box-shadow:
+    0 10px 35px rgba(67, 42, 83, 0.12);
+}
+
+
+.architecture-experience__slide {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+
+  transition: opacity 0.8s ease-in-out;
+}
+
+
+.architecture-experience__slide.active {
+  opacity: 1;
+}
+
+
+/* =========================================
+   IMAGE LABEL
+========================================= */
+
+.architecture-experience__label {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  padding: 16px 22px;
+
+  background-color: rgba(28, 28, 28, 0.92);
+
+  color: #ffffff;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  z-index: 3;
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.architecture-experience__dots {
+  position: absolute;
+
+  bottom: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  z-index: 3;
+}
+
+
+.architecture-experience__dot {
+  width: 9px;
+  height: 9px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.55);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+
+.architecture-experience__dot.active {
+  background-color: #ffffff;
+
+  transform: scale(1.25);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .architecture-experience {
+    padding: 60px 20px 70px;
+  }
+
+  .architecture-experience__container {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    max-width: 760px;
+  }
+
+  .architecture-experience__heading {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .architecture-experience__slider {
+    width: 100%;
+    aspect-ratio: 1.5 / 1;
+  }
+
+  .architecture-experience__button {
+    margin-top: 35px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .architecture-experience {
+    padding: 45px 16px 55px;
+  }
+
+  .architecture-experience__container {
+    gap: 32px;
+  }
+
+  .architecture-experience__heading {
+    font-size: 1.65rem;
+    margin-bottom: 25px;
+  }
+
+  .architecture-experience__details {
+    gap: 22px;
+  }
+
+  .architecture-experience__detail h3 {
+    font-size: 0.78rem;
+  }
+
+  .architecture-experience__detail p {
+    font-size: 0.92rem;
+  }
+
+  .architecture-experience__two-column {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .architecture-experience__button {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 14px 22px;
+  }
+
+  .architecture-experience__slider {
+    aspect-ratio: 1.15 / 1;
+
+    border-radius: 10px;
+  }
+
+  .architecture-experience__label {
+    padding: 12px 15px;
+
+    font-size: 0.8rem;
+  }
+
+  .architecture-experience__dots {
+    bottom: 13px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .architecture-experience {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .architecture-experience__heading {
+    font-size: 1.45rem;
+  }
+
+  .architecture-experience__detail p {
+    font-size: 0.88rem;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .architecture-experience__slide {
+    transition: none;
+  }
+
+  .architecture-experience__button,
+  .architecture-experience__dot {
+    transition: none;
+  }
+}

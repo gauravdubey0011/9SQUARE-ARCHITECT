@@ -210,15 +210,15 @@ export default function Footer() {
               </li>
 
               <li>
-                <a href="https://google.com">Luxury Interiors</a>
+                <Link to="/interiors/luxury-interiors">
+                  9Square Kitchen
+                </Link>
               </li>
 
               <li>
-                <a href="https://google.com">9Square Kitchen</a>
-              </li>
-
-              <li>
-                <a href="https://google.com">9Square Wardrobe</a>
+                <Link to="/interiors/value-interiors">
+                  9Square Wardrobe
+                </Link>
               </li>
 
               <li>
@@ -237,14 +237,6 @@ export default function Footer() {
                 <a href="#estimate-section">
                   Wardrobe Price Calculator
                 </a>
-              </li>
-
-              <li>
-                <a href="https://google.com">Kitchen Cabinets</a>
-              </li>
-
-              <li>
-                <a href="https://google.com">Wardrobe Cabinets</a>
               </li>
 
             </ul>

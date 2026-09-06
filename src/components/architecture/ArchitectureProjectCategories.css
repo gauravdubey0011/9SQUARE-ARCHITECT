@@ -1,0 +1,265 @@
+.architecture-project-categories {
+  width: 100%;
+  padding: 60px 24px 70px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.architecture-project-categories__container {
+  width: 100%;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+.architecture-project-categories__heading {
+  margin: 0 0 50px;
+
+  text-align: center;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+
+  color: #1c1c1c;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.architecture-project-categories__grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  width: 100%;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.architecture-project-card {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 1.7 / 1;
+
+  overflow: hidden;
+
+  text-decoration: none;
+
+  background-color: #ddd;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.architecture-project-card__image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transform: scale(1);
+
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================
+   DARK OVERLAY
+========================= */
+
+.architecture-project-card__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.08);
+
+  transition:
+    background-color 0.4s ease;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.architecture-project-card__content {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+
+.architecture-project-card__title {
+  margin: 0;
+
+  max-width: 90%;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+
+  font-size: 1.65rem;
+
+  font-weight: 500;
+
+  line-height: 1.25;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.45);
+
+  transform: translateY(0);
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .architecture-project-card:hover
+  .architecture-project-card__image {
+    transform: scale(1.08);
+  }
+
+  .architecture-project-card:hover
+  .architecture-project-card__overlay {
+    background: rgba(0, 0, 0, 0.28);
+  }
+
+  .architecture-project-card:hover
+  .architecture-project-card__title {
+    transform: translateY(-3px);
+  }
+}
+
+
+/* =========================
+   FOCUS
+========================= */
+
+.architecture-project-card:focus-visible {
+  outline: 3px solid #7b3fa0;
+  outline-offset: 3px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .architecture-project-categories {
+    padding: 52px 20px 60px;
+  }
+
+  .architecture-project-categories__heading {
+    font-size: 1.75rem;
+    margin-bottom: 38px;
+  }
+
+  .architecture-project-categories__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .architecture-project-card {
+    aspect-ratio: 1.55 / 1;
+  }
+
+  .architecture-project-card__title {
+    font-size: 1.35rem;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .architecture-project-categories {
+    padding: 42px 16px 50px;
+  }
+
+  .architecture-project-categories__heading {
+    font-size: 1.45rem;
+    margin-bottom: 28px;
+  }
+
+  .architecture-project-categories__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .architecture-project-card {
+    aspect-ratio: 1.55 / 1;
+  }
+
+  .architecture-project-card__content {
+    padding: 18px;
+  }
+
+  .architecture-project-card__title {
+    font-size: 1.25rem;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+  .architecture-project-categories {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .architecture-project-card__title {
+    font-size: 1.1rem;
+  }
+}

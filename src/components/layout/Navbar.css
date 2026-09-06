@@ -3,102 +3,273 @@
   top: 0;
   left: 0;
   right: 0;
+
   z-index: 100;
+
   width: 100%;
   padding: 20px 20px 0;
+
   box-sizing: border-box;
+
   background: transparent;
-  pointer-events: none; /* lets clicks pass through the empty space around the pill */
+  pointer-events: none;
 }
 
 .navbar__pill {
-  pointer-events: auto; /* the pill itself still needs to be clickable */
+  pointer-events: auto;
+
+  position: relative;
+
   max-width: 1500px;
   margin: 0 auto;
+
   height: 64px;
+
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
+
   border-radius: 999px;
+
   padding: 0 10px 0 28px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.179);
+
   box-sizing: border-box;
 }
 
+/* Logo */
+
 .navbar__logo {
   font-family: 'Fraunces', Georgia, serif;
+
   font-size: 1.3rem;
   font-weight: 700;
+
   letter-spacing: 0.05em;
+
   color: #1c1c1c;
+
   text-decoration: none;
+
+  z-index: 2;
 }
+
+/* Get Free Quote */
 
 .navbar__cta {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+
   border: none;
+
   cursor: pointer;
+
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
+
   font-size: 0.9rem;
   font-weight: 600;
+
   letter-spacing: 0.01em;
+
   color: #ffffff;
+
   background-color: #1c1c1c;
+
   padding: 0.7rem 1.4rem;
+
   border-radius: 999px;
+
   transition: background-color 0.2s ease;
+
+  z-index: 2;
 }
 
 .navbar__cta:hover {
   background-color: #333333;
 }
 
-.navbar__cta-icon {
-  font-size: 0.85rem;
-  line-height: 1;
+/* =========================
+   CENTER MODE SWITCHER
+========================= */
+
+.navbar__mode-switcher {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  z-index: 1;
 }
 
-/* Tablet */
-@media (max-width: 768px) {
+.mode-label {
+  border: none;
+  background: transparent;
+
+  padding: 0;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  color: #8a8a8a;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.mode-label--active {
+  color: #1c1c1c;
+  font-weight: 700;
+}
+
+/* Toggle */
+
+.mode-toggle {
+  position: relative;
+
+  width: 54px;
+  height: 30px;
+
+  border: none;
+
+  padding: 0;
+
+  border-radius: 999px;
+
+  background-color: #222222;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.mode-toggle__thumb {
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  top: 3px;
+  left: 3px;
+
+  border-radius: 50%;
+
+  background-color: #ffffff;
+
+  transition: transform 0.3s ease;
+}
+
+/* Architecture ON */
+
+.mode-toggle--architecture .mode-toggle__thumb {
+  transform: translateX(24px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
   .navbar {
     padding: 14px 14px 0;
   }
+
   .navbar__pill {
     height: 58px;
     padding: 0 8px 0 20px;
   }
+
   .navbar__logo {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
+
   .navbar__cta {
-    font-size: 0.82rem;
-    padding: 0.6rem 1.1rem;
+    font-size: 0.78rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .navbar__mode-switcher {
+    gap: 7px;
+  }
+
+  .mode-label {
+    font-size: 0.65rem;
+  }
+
+  .mode-toggle {
+    width: 48px;
+    height: 27px;
+  }
+
+  .mode-toggle__thumb {
+    width: 21px;
+    height: 21px;
+  }
+
+  .mode-toggle--architecture .mode-toggle__thumb {
+    transform: translateX(21px);
   }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-  .navbar {
-    padding: 10px 10px 0;
-  }
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
   .navbar__pill {
-    height: 52px;
-    padding: 0 6px 0 16px;
+    height: 54px;
+
+    padding: 0 8px 0 16px;
   }
+
   .navbar__logo {
-    font-size: 1rem;
-    letter-spacing: 0.03em;
+    font-size: 0.9rem;
   }
+
   .navbar__cta {
-    font-size: 0.72rem;
-    padding: 0.5rem 0.85rem;
-    gap: 5px;
+    font-size: 0.68rem;
+
+    padding: 0.5rem 0.75rem;
   }
-  .navbar__cta-icon {
-    font-size: 0.7rem;
+
+  .navbar__mode-switcher {
+    gap: 4px;
+  }
+
+  .mode-label {
+    font-size: 0.52rem;
+  }
+
+  .mode-toggle {
+    width: 40px;
+    height: 23px;
+  }
+
+  .mode-toggle__thumb {
+    width: 17px;
+    height: 17px;
+
+    top: 3px;
+    left: 3px;
+  }
+
+  .mode-toggle--architecture .mode-toggle__thumb {
+    transform: translateX(17px);
   }
 }

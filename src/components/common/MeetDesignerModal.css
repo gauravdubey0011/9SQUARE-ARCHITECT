@@ -260,3 +260,62 @@
 .modal-card__status--error {
   color: #c41818;
 }
+
+/* =========================================
+   FORM VALIDATION
+   ========================================= */
+
+.modal-card__field {
+  width: 100%;
+}
+
+.modal-card__field-error {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: #c41818;
+  margin: 6px 2px 0;
+}
+
+.modal-card__input--error {
+  border-color: #c41818 !important;
+}
+
+.modal-card__phone-row--error {
+  border-color: #c41818 !important;
+}
+
+
+/* Prevent the phone input from inheriting
+   unwanted browser number controls */
+.modal-card__phone-input {
+  outline: none;
+}
+
+.modal-card__phone-input:focus {
+  outline: none;
+}
+
+
+/* Better focus states */
+
+.modal-card__input:focus,
+.modal-card__select:focus {
+  outline: none;
+  border-color: #7b3fa0;
+  box-shadow: 0 0 0 2px rgba(123, 63, 160, 0.08);
+}
+
+.modal-card__phone-row:focus-within {
+  border-color: #7b3fa0;
+  box-shadow: 0 0 0 2px rgba(123, 63, 160, 0.08);
+}
+
+
+/* Mobile validation spacing */
+
+@media (max-width: 480px) {
+  .modal-card__field-error {
+    font-size: 0.75rem;
+  }
+}
