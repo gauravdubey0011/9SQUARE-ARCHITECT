@@ -3,90 +3,78 @@
   top: 0;
   left: 0;
   right: 0;
-
   z-index: 100;
-
   width: 100%;
   padding: 20px 20px 0;
-
   box-sizing: border-box;
-
   background: transparent;
   pointer-events: none;
 }
 
 .navbar__pill {
   pointer-events: auto;
-
-  position: relative;
-
   max-width: 1500px;
   margin: 0 auto;
-
-  height: 64px;
-
+  min-height: 64px;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
-
   border-radius: 999px;
-
   padding: 0 10px 0 28px;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
+  gap: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.179);
-
   box-sizing: border-box;
 }
 
-/* Logo */
+/* Desktop/tablet ordering: logo → switcher → CTA */
+.navbar__logo {
+  order: 1;
+}
 
+.navbar__mode-switcher {
+  order: 2;
+}
+
+.navbar__cta {
+  order: 3;
+}
+
+/* Wrapper that holds logo + CTA */
+.navbar__bar {
+  display: contents; /* desktop: children act as direct flex items of the pill */
+}
+
+/* Logo */
 .navbar__logo {
   font-family: 'Fraunces', Georgia, serif;
-
   font-size: 1.3rem;
   font-weight: 700;
-
   letter-spacing: 0.05em;
-
   color: #1c1c1c;
-
   text-decoration: none;
-
-  z-index: 2;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* Get Free Quote */
-
 .navbar__cta {
   display: flex;
   align-items: center;
   justify-content: center;
-
   border: none;
-
   cursor: pointer;
-
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
-
   font-size: 0.9rem;
   font-weight: 600;
-
   letter-spacing: 0.01em;
-
   color: #ffffff;
-
   background-color: #1c1c1c;
-
   padding: 0.7rem 1.4rem;
-
   border-radius: 999px;
-
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: background-color 0.2s ease;
-
-  z-index: 2;
 }
 
 .navbar__cta:hover {
@@ -98,38 +86,24 @@
 ========================= */
 
 .navbar__mode-switcher {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
+  flex: 1;                    /* takes the space between logo and CTA */
   display: flex;
   align-items: center;
-
+  justify-content: center;
   gap: 10px;
-
-  z-index: 1;
+  min-width: 0;               /* lets it shrink instead of overflowing */
 }
 
 .mode-label {
   border: none;
   background: transparent;
-
   padding: 0;
-
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
-
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
-
   color: #8a8a8a;
-
   cursor: pointer;
-
   white-space: nowrap;
-
   transition: color 0.2s ease;
 }
 
@@ -139,46 +113,55 @@
 }
 
 /* Toggle */
-
 .mode-toggle {
   position: relative;
-
   width: 54px;
   height: 30px;
-
   border: none;
-
   padding: 0;
-
   border-radius: 999px;
-
   background-color: #222222;
-
   cursor: pointer;
-
   flex-shrink: 0;
 }
 
 .mode-toggle__thumb {
   position: absolute;
-
   width: 24px;
   height: 24px;
-
   top: 3px;
   left: 3px;
-
   border-radius: 50%;
-
   background-color: #ffffff;
-
   transition: transform 0.3s ease;
 }
 
-/* Architecture ON */
-
 .mode-toggle--architecture .mode-toggle__thumb {
   transform: translateX(24px);
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media (max-width: 1100px) {
+  .navbar__pill {
+    padding: 0 10px 0 22px;
+    gap: 12px;
+  }
+
+  .navbar__logo {
+    font-size: 1.15rem;
+  }
+
+  .mode-label {
+    font-size: 0.75rem;
+  }
+
+  .navbar__cta {
+    font-size: 0.85rem;
+    padding: 0.65rem 1.2rem;
+  }
 }
 
 /* =========================
@@ -191,17 +174,18 @@
   }
 
   .navbar__pill {
-    height: 58px;
-    padding: 0 8px 0 20px;
+    min-height: 58px;
+    padding: 0 8px 0 18px;
+    gap: 10px;
   }
 
   .navbar__logo {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .navbar__cta {
-    font-size: 0.78rem;
-    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+    padding: 0.55rem 0.95rem;
   }
 
   .navbar__mode-switcher {
@@ -209,51 +193,112 @@
   }
 
   .mode-label {
-    font-size: 0.65rem;
+    font-size: 0.68rem;
   }
 
   .mode-toggle {
-    width: 48px;
-    height: 27px;
+    width: 46px;
+    height: 26px;
   }
 
   .mode-toggle__thumb {
-    width: 21px;
-    height: 21px;
+    width: 20px;
+    height: 20px;
   }
 
   .mode-toggle--architecture .mode-toggle__thumb {
-    transform: translateX(21px);
+    transform: translateX(20px);
   }
 }
 
 /* =========================
-   MOBILE
+   MOBILE — two-row pill
 ========================= */
 
-@media (max-width: 650px) {
-  .navbar__pill {
-    height: 54px;
+@media (max-width: 680px) {
+  .navbar {
+    padding: 12px 12px 0;
+  }
 
-    padding: 0 8px 0 16px;
+  .navbar__pill {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    border-radius: 28px;
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  /* wrapper becomes a real row again */
+  .navbar__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
   }
 
   .navbar__logo {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
+  }
+
+  .navbar__cta {
+    font-size: 0.75rem;
+    padding: 0.55rem 1rem;
+  }
+
+  .navbar__mode-switcher {
+    flex: none;
+    width: 100%;
+    gap: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  .mode-label {
+    font-size: 0.72rem;
+  }
+
+  .mode-toggle {
+    width: 44px;
+    height: 25px;
+  }
+
+  .mode-toggle__thumb {
+    width: 19px;
+    height: 19px;
+  }
+
+  .mode-toggle--architecture .mode-toggle__thumb {
+    transform: translateX(19px);
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .navbar {
+    padding: 10px 10px 0;
+  }
+
+  .navbar__pill {
+    padding: 9px 12px;
+    border-radius: 24px;
+  }
+
+  .navbar__logo {
+    font-size: 0.92rem;
+    letter-spacing: 0.03em;
   }
 
   .navbar__cta {
     font-size: 0.68rem;
-
-    padding: 0.5rem 0.75rem;
-  }
-
-  .navbar__mode-switcher {
-    gap: 4px;
+    padding: 0.5rem 0.8rem;
   }
 
   .mode-label {
-    font-size: 0.52rem;
+    font-size: 0.66rem;
   }
 
   .mode-toggle {
@@ -264,9 +309,6 @@
   .mode-toggle__thumb {
     width: 17px;
     height: 17px;
-
-    top: 3px;
-    left: 3px;
   }
 
   .mode-toggle--architecture .mode-toggle__thumb {
