@@ -1,0 +1,486 @@
+/* =========================
+   INTRO OVERLAY
+========================= */
+
+.intro-animation {
+  position: fixed;
+  inset: 0;
+
+  z-index: 99999;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  opacity: 1;
+}
+
+
+/* =========================
+   CENTER CONTENT
+========================= */
+
+.intro-animation__content {
+  position: relative;
+
+  width: 240px;
+  height: 240px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.intro-animation__logo {
+  position: relative;
+
+  z-index: 10;
+
+  width: 125px;
+  height: 125px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  transform: scale(0.35);
+
+  animation:
+    logoEnter 1.1s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+
+.intro-animation__logo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================
+   SOFT GLOW
+========================= */
+
+.intro-animation__glow {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  background: rgba(237, 28, 36, 0.08);
+
+  filter: blur(20px);
+
+  opacity: 0;
+
+  transform: scale(0.4);
+
+  animation:
+    glowAppear 1.2s
+    ease-out
+    forwards;
+}
+
+
+/* =========================
+   BURST RINGS
+========================= */
+
+.intro-animation__ring {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  border-radius: 50%;
+
+  border: 3px solid rgba(237, 28, 36, 0);
+
+  transform: translate(-50%, -50%) scale(0);
+
+  opacity: 0;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+
+.intro-animation__ring--1 {
+  width: 120px;
+  height: 120px;
+}
+
+
+.intro-animation__ring--2 {
+  width: 120px;
+  height: 120px;
+}
+
+
+.intro-animation__ring--3 {
+  width: 120px;
+  height: 120px;
+}
+
+
+/* =========================
+   BURST STATE
+========================= */
+
+.intro-animation--burst
+  .intro-animation__logo {
+
+  animation:
+    logoBurst 0.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+
+.intro-animation--burst
+  .intro-animation__glow {
+
+  animation:
+    glowBurst 1.2s
+    ease-out
+    forwards;
+}
+
+
+.intro-animation--burst
+  .intro-animation__ring--1 {
+
+  animation:
+    ringBurst 1.1s
+    ease-out
+    forwards;
+}
+
+
+.intro-animation--burst
+  .intro-animation__ring--2 {
+
+  animation:
+    ringBurst 1.1s
+    ease-out
+    0.15s
+    forwards;
+}
+
+
+.intro-animation--burst
+  .intro-animation__ring--3 {
+
+  animation:
+    ringBurst 1.1s
+    ease-out
+    0.3s
+    forwards;
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.intro-animation__rays {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+.intro-animation__particle {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #ed1c24;
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--particle-angle))
+    translateX(0)
+    scale(0.2);
+}
+
+
+/* Burst particles when burst starts */
+
+.intro-animation--burst
+  .intro-animation__particle {
+
+  animation:
+    particleBurst 1s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    var(--particle-delay)
+    forwards;
+}
+
+
+/* =========================
+   LOGO ENTER
+========================= */
+
+@keyframes logoEnter {
+
+  0% {
+    opacity: 0;
+
+    transform: scale(0.35);
+  }
+
+  60% {
+    opacity: 1;
+
+    transform: scale(1.08);
+  }
+
+  80% {
+    opacity: 1;
+
+    transform: scale(0.97);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* =========================
+   LOGO BURST
+========================= */
+
+@keyframes logoBurst {
+
+  0% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  35% {
+    opacity: 1;
+
+    transform: scale(1.12);
+  }
+
+  70% {
+    opacity: 0.8;
+
+    transform: scale(1.45);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(2.2);
+  }
+}
+
+
+/* =========================
+   GLOW APPEAR
+========================= */
+
+@keyframes glowAppear {
+
+  0% {
+    opacity: 0;
+
+    transform: scale(0.4);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* =========================
+   GLOW BURST
+========================= */
+
+@keyframes glowBurst {
+
+  0% {
+    opacity: 0.7;
+
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(5);
+  }
+}
+
+
+/* =========================
+   RING BURST
+========================= */
+
+@keyframes ringBurst {
+
+  0% {
+    opacity: 0;
+
+    border-color: rgba(237, 28, 36, 0);
+
+    transform:
+      translate(-50%, -50%)
+      scale(0);
+  }
+
+  15% {
+    opacity: 1;
+
+    border-color: rgba(237, 28, 36, 0.75);
+  }
+
+  100% {
+    opacity: 0;
+
+    border-color: rgba(237, 28, 36, 0);
+
+    transform:
+      translate(-50%, -50%)
+      scale(5);
+  }
+}
+
+
+/* =========================
+   PARTICLE BURST
+========================= */
+
+@keyframes particleBurst {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--particle-angle))
+      translateX(0)
+      scale(0.2);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--particle-angle))
+      translateX(var(--particle-distance))
+      scale(1);
+  }
+}
+
+
+/* =========================
+   REVEAL
+========================= */
+
+.intro-animation--reveal {
+  animation: introReveal 0.8s ease-out forwards;
+}
+
+
+@keyframes introReveal {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .intro-animation__content {
+    width: 190px;
+    height: 190px;
+  }
+
+  .intro-animation__logo {
+    width: 95px;
+    height: 95px;
+  }
+
+  .intro-animation__glow {
+    width: 120px;
+    height: 120px;
+  }
+
+  .intro-animation__particle {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .intro-animation {
+    display: none;
+  }
+
+}

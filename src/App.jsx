@@ -15,12 +15,14 @@ import Architecture from './pages/Architecture';
 import ArchitectureContactModal from './components/architecture/ArchitectureContactModal';
 import LuxuryInteriors from './pages/LuxuryInteriors';
 import ValueInteriors from './pages/ValueInteriors';
+import IntroAnimation from './components/intro/IntroAnimation';
 
 function App() {
   return (
     <ModalProvider>
       <BrowserRouter>
         {/* <CursorTrail /> */}
+        <IntroAnimation />
         <Navbar />
         <MeetDesignerModal />
         <ContactModal />
