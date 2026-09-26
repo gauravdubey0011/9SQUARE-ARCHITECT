@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import './IntroAnimation.css';
 
-// Replace with your actual logo path
 import logo from '../../assets/icons/icon-9square.png';
 
 const particles = Array.from({ length: 24 }, (_, index) => index);
