@@ -1,156 +1,4 @@
-/* .estimate {
-  width: 100%;
-  padding: 60px 24px;
-  box-sizing: border-box;
-  background-color: #E6E6FA;
-  color: #1c1c1c;
-  text-align: center;
-}
-
-.estimate__heading {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #1c1c1c;
-  margin: 0 0 12px;
-}
-
-.estimate__flip-wrap {
-  display: inline-block;
-  perspective: 400px;
-  vertical-align: top;
-  overflow: hidden;
-}
-
-.estimate__flip-word {
-  display: inline-block;
-  color: #e26464;
-  transform-origin: top center;
-  animation: flapIn 0.5s ease;
-}
-
-@keyframes flapIn {
-  0% {
-    transform: rotateX(90deg);
-    opacity: 0;
-  }
-  60% {
-    transform: rotateX(-10deg);
-    opacity: 1;
-  }
-  100% {
-    transform: rotateX(0deg);
-    opacity: 1;
-  }
-}
-
-.estimate__subheading {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  font-size: 1.05rem;
-  color: #4a4a4a;
-  margin: 0 0 40px;
-}
-
-.estimate__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.estimate-card {
-  background-color: #ffffff;
-  border: 1px solid #ececec;
-  border-radius: 12px;
-  padding: 28px 28px 32px;
-  text-align: left;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
-}
-
-.estimate-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
-}
-
-.estimate-card__icons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.estimate-card__icon-main {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: #f4e9e9;
-}
-
-.estimate-card__icon-badge {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: #ececec;
-}
-
-.estimate-card__title {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1c1c1c;
-  margin: 0 0 8px;
-}
-
-.estimate-card__description {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  font-size: 0.92rem;
-  color: #6b6b6b;
-  line-height: 1.45;
-  margin: 0 0 24px;
-  min-height: 44px;
-}
-
-.estimate-card__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  width: 100%;
-  padding: 0.9rem 0;
-  background-color: #e26464;
-  color: #ffffff;
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-  border-radius: 999px;
-  box-sizing: border-box;
-  transition: background-color 0.2s ease;
-}
-
-.estimate-card__button:hover {
-  background-color: #d14e4e;
-}
-
-.estimate-card__arrow {
-  font-size: 1.1rem;
-  line-height: 1;
-}
-
-@media (max-width: 900px) {
-  .estimate__grid {
-    grid-template-columns: 1fr;
-  }
-  .estimate__heading {
-    font-size: 1.6rem;
-  }
-} */
-
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap');
 
 /* =========================
    ESTIMATE SECTION
@@ -171,7 +19,7 @@
 ========================= */
 
 .estimate__heading {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 2.2rem;
   font-weight: 800;
   color: #1c1c1c;
@@ -210,7 +58,7 @@
 }
 
 .estimate__subheading {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.05rem;
   color: #4a4a4a;
   margin: 0 0 40px;
@@ -316,7 +164,7 @@
 ========================= */
 
 .estimate-card__title {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.2rem;
   font-weight: 700;
   color: #1c1c1c;
@@ -324,7 +172,7 @@
 }
 
 .estimate-card__description {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 0.92rem;
   color: #6b6b6b;
   line-height: 1.45;
@@ -349,7 +197,7 @@
   background-color: #e26464;
   color: #ffffff;
 
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.03em;

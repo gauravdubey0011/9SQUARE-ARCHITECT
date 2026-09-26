@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap');
+
 .showcase {
   width: 100%;
   padding: 60px 24px;
@@ -8,9 +10,9 @@
 }
 
 .showcase__heading {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 2rem;
-  font-weight: 500;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 400;
   color: #1c1c1c;
   margin: 0 0 32px;
 }
@@ -158,8 +160,9 @@
 .showcase-card__caption {
   margin: 16px 0 0;
 
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  font-size: 1rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 300;
   color: #1c1c1c;
   line-height: 1.4;
 }
@@ -186,18 +189,14 @@
 
   .showcase__heading {
     padding-right: 24px;
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     margin-bottom: 24px;
   }
 
-
-  /* Hide desktop arrows and desktop slider */
   .showcase__desktop {
     display: none;
   }
 
-
-  /* Show all 6 cards horizontally */
   .showcase__mobile-scroll {
     display: flex;
     gap: 16px;
@@ -214,15 +213,11 @@
     -webkit-overflow-scrolling: touch;
   }
 
-
-  /* Each card takes most of screen */
   .showcase__mobile-scroll .showcase-card {
     flex: 0 0 75%;
     scroll-snap-align: start;
   }
 
-
-  /* Optional scrollbar hiding */
   .showcase__mobile-scroll::-webkit-scrollbar {
     display: none;
   }
@@ -245,7 +240,7 @@
 
   .showcase__heading {
     padding-right: 16px;
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
 
   .showcase__mobile-scroll {
@@ -253,14 +248,12 @@
     padding-right: 16px;
   }
 
-
-  /* One card almost fills mobile screen */
   .showcase__mobile-scroll .showcase-card {
     flex: 0 0 85%;
   }
 
   .showcase-card__caption {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
 
 }

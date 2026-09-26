@@ -24,6 +24,15 @@ export default function TalkToDesigner() {
             </option>
             <option value="lucknow">Lucknow</option>
             <option value="varanasi">Varanasi</option>
+            <option value="varanasi">Noida</option>
+            <option value="varanasi">Gurugram</option>
+            <option value="varanasi">Delhi</option>
+            <option value="varanasi">Agra</option>
+            <option value="varanasi">Kanpur</option>
+            <option value="varanasi">Pune</option>
+            <option value="varanasi">Mumbai</option>
+            <option value="varanasi">Mysuru</option>
+            <option value="varanasi">Bengaluru</option>
           </select>
 
           <a href="https://google.com" className="talkdesigner__submit">

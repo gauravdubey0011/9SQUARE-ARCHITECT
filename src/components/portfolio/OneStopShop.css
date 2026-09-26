@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap');
+
 .onestop {
   width: 100%;
   padding: 60px 24px;
@@ -8,7 +10,7 @@
 }
 
 .onestop__heading {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 2.2rem;
   font-weight: 700;
   color: #1c1c1c;
@@ -16,7 +18,7 @@
 }
 
 .onestop__subheading {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.05rem;
   color: #4a4a4a;
   max-width: 720px;
@@ -70,7 +72,7 @@
 }
 
 .onestop-card__title {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: #1c1c1c;
@@ -78,7 +80,7 @@
 }
 
 .onestop-card__description {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 0.9rem;
   color: #6b6b6b;
   line-height: 1.4;

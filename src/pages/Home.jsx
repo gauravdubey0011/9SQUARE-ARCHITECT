@@ -33,7 +33,7 @@ import VisitUs from '../components/portfolio/VisitUs';
 import Testimonials from '../components/portfolio/Testimonials';
 import Overview from '../components/portfolio/Overview';
 import Footer from '../components/layout/Footer';
-
+import OurProcess from '../components/portfolio/OurProcess';
 export default function Home() {
   return (
     <>
@@ -41,8 +41,9 @@ export default function Home() {
       <Overview />
       <Showcase />
       <OneStopShop />
-      <WhyChooseTicker />
+      {/* <WhyChooseTicker /> */}
       <EstimateSection />
+      <OurProcess />
       <VisitUs />
       <Testimonials />
       <DesignerHero />

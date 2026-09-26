@@ -89,6 +89,15 @@ export default function Contact() {
           </option>
           <option value="Lucknow">Lucknow</option>
           <option value="Varanasi">Varanasi</option>
+          <option value="varanasi">Noida</option>
+            <option value="varanasi">Gurugram</option>
+            <option value="varanasi">Delhi</option>
+            <option value="varanasi">Agra</option>
+            <option value="varanasi">Kanpur</option>
+            <option value="varanasi">Pune</option>
+            <option value="varanasi">Mumbai</option>
+            <option value="varanasi">Mysuru</option>
+            <option value="varanasi">Bengaluru</option>
         </select>
 
         <button type="submit" className="contact__submit" disabled={status === 'sending'}>

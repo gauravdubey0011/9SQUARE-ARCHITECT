@@ -17,17 +17,17 @@ import img10 from '../assets/modular-interiors/kitchen10.jpg';
 import img11 from '../assets/modular-interiors/kitchen11.jpg';
 
 const kitchenDesigns = [
-  { image: img1, caption: 'Coastal Chic Modular Kitchen Design' },
-  { image: img2, caption: 'Modular Kitchen Design with Stylish Cabinets and Sleek Appliances' },
-  { image: img3, caption: 'Sleek Serenity Modern Kitchen Design' },
-  { image: img4, caption: 'Warm Wood Modular Kitchen with Breakfast Counter' },
-  { image: img5, caption: 'Minimalist White Kitchen with Marble Backsplash' },
-  { image: img6, caption: 'Contemporary L-Shaped Modular Kitchen' },
-  { image: img7, caption: 'Compact Modular Kitchen for Small Spaces' },
-  { image: img8, caption: 'Bold Two-Tone Modular Kitchen Design' },
-  { image: img9, caption: 'Open Concept Modular Kitchen with Island' },
-  { image: img10, caption: 'Classic Modular Kitchen with Wooden Finish' },
-  { image: img11, caption: 'Mast Kitchen h n' },
+  { image: img1, caption: 'Coastal Chic' },
+  { image: img2, caption: 'Stylish Cabinets' },
+  { image: img3, caption: 'Sleek Serenity' },
+  { image: img4, caption: 'Warm Wood Modular' },
+  { image: img5, caption: 'Minimalist Marble Backsplash' },
+  { image: img6, caption: 'Contemporary L-Shaped' },
+  { image: img7, caption: 'Compact Small Spaces' },
+  { image: img8, caption: 'Bold Two-Tone Modular' },
+  { image: img9, caption: 'Open Concept Modular' },
+  { image: img10, caption: 'Classic Modular Kitchen' },
+  { image: img11, caption: 'Mast Kitchen' },
 ];
 
 export default function ModularInteriors() {
