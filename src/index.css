@@ -298,6 +298,14 @@ body .testimonials {
   padding-block: var(--section-space);
 }
 
+body .estimate {
+  padding-bottom: 24px;
+}
+
+body .our-process {
+  padding-block: 0;
+}
+
 body .overview,
 body .visitus {
   background-color: var(--bg);
@@ -368,10 +376,18 @@ body .visitus__image-wrap {
   :root {
     --section-space: 40px;
   }
+
+  body .estimate {
+    padding-bottom: 22px;
+  }
 }
 
 @media (max-width: 640px) {
   :root {
     --section-space: 32px;
+  }
+
+  body .estimate {
+    padding-bottom: 18px;
   }
 }
