@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import cities from '../data/cities';
+import { isValidPersonName } from '../utils/formValidation';
 import './KitchenEstimate.css';
 
 const feetOptions = Array.from({ length: 16 }, (_, index) => index + 5);
 const inchOptions = Array.from({ length: 12 }, (_, index) => index);
 
-const NAME_REGEX = /^[a-zA-Z\s]{2,50}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[6-9]\d{9}$/;
 
@@ -49,7 +50,7 @@ export default function KitchenEstimate() {
     switch (name) {
       case 'name':
         if (!value.trim()) return 'Name is required';
-        if (!NAME_REGEX.test(value.trim())) return 'Enter a valid name (letters only)';
+        if (!isValidPersonName(value)) return 'Enter a valid name';
         return '';
       case 'email':
         if (!value.trim()) return 'Email is required';
@@ -409,8 +410,9 @@ export default function KitchenEstimate() {
 
       <form className="quote-form" onSubmit={handleSubmit} noValidate>
         <div className="quote-field-wrap">
-          <label className="quote-label">Name</label>
+          <label className="quote-label" htmlFor="kitchen-name">Name</label>
           <input
+            id="kitchen-name"
             type="text"
             placeholder="Enter your name"
             value={estimateData.name}
@@ -421,8 +423,9 @@ export default function KitchenEstimate() {
         </div>
 
         <div className="quote-field-wrap">
-          <label className="quote-label">Email</label>
+          <label className="quote-label" htmlFor="kitchen-email">Email</label>
           <input
+            id="kitchen-email"
             type="email"
             placeholder="Enter your email"
             value={estimateData.email}
@@ -433,8 +436,9 @@ export default function KitchenEstimate() {
         </div>
 
         <div className="quote-field-wrap">
-          <label className="quote-label">Phone Number</label>
+          <label className="quote-label" htmlFor="kitchen-phone">Phone Number</label>
           <input
+            id="kitchen-phone"
             type="tel"
             placeholder="Enter your phone number"
             value={estimateData.phone}
@@ -446,8 +450,9 @@ export default function KitchenEstimate() {
         </div>
 
         <div className="quote-field-wrap">
-          <label className="quote-label">City</label>
+          <label className="quote-label" htmlFor="kitchen-city">City</label>
           <select
+            id="kitchen-city"
             value={estimateData.city}
             onChange={(e) => handleContactFieldChange('city', e.target.value)}
             className={errors.city ? 'quote-input input-error' : 'quote-input'}
@@ -455,8 +460,7 @@ export default function KitchenEstimate() {
             <option value="" disabled>
               Select your city
             </option>
-            <option value="Lucknow">Lucknow</option>
-            <option value="Varanasi">Varanasi</option>
+            {cities.map((city) => <option key={city} value={city}>{city}</option>)}
           </select>
           {errors.city && <span className="field-error-message">{errors.city}</span>}
         </div>

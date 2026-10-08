@@ -94,6 +94,18 @@
   background-color: #f0f0f0;
 }
 
+.showcase-card__image-action {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.showcase-card__project-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .showcase-card__image {
   position: absolute;
   inset: 0;
@@ -158,6 +170,7 @@
 ========================= */
 
 .showcase-card__caption {
+  display: block;
   margin: 16px 0 0;
 
   font-family: 'Cormorant Garamond', Georgia, serif;
@@ -166,6 +179,7 @@
   color: #1c1c1c;
   line-height: 1.4;
 }
+
 
 
 /* =========================
@@ -213,9 +227,13 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .showcase__mobile-scroll .showcase-card {
+  .showcase__mobile-scroll > .scroll-reveal {
     flex: 0 0 75%;
     scroll-snap-align: start;
+  }
+
+  .showcase__mobile-scroll .showcase-card {
+    width: 100%;
   }
 
   .showcase__mobile-scroll::-webkit-scrollbar {
@@ -248,7 +266,7 @@
     padding-right: 16px;
   }
 
-  .showcase__mobile-scroll .showcase-card {
+  .showcase__mobile-scroll > .scroll-reveal {
     flex: 0 0 85%;
   }
 

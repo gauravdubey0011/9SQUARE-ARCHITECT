@@ -351,6 +351,8 @@
 
 import { useState } from 'react';
 import { useModal } from '../../context/ModalContext';
+import cities from '../../data/cities';
+import { isValidPersonName } from '../../utils/formValidation';
 import './MeetDesignerModal.css';
 
 const initialFormData = {
@@ -393,8 +395,8 @@ export default function MeetDesignerModal() {
           return 'Name must not exceed 50 characters.';
         }
 
-        if (!/^[A-Za-z\s]+$/.test(trimmedValue)) {
-          return 'Name can contain only letters and spaces.';
+        if (!isValidPersonName(trimmedValue)) {
+          return 'Enter a valid name.';
         }
 
         return '';
@@ -436,7 +438,7 @@ export default function MeetDesignerModal() {
           return 'Please select your property city.';
         }
 
-        if (!['Lucknow', 'Varanasi'].includes(value)) {
+        if (!cities.includes(value)) {
           return 'Please select a valid city.';
         }
 
@@ -597,6 +599,7 @@ export default function MeetDesignerModal() {
             <input
               type="text"
               name="name"
+              aria-label="Name"
               placeholder="Enter your name"
               value={formData.name}
               onChange={handleChange}
@@ -636,6 +639,7 @@ export default function MeetDesignerModal() {
               <input
                 type="tel"
                 name="phone"
+                aria-label="Phone number"
                 placeholder="Enter your mobile number"
                 value={formData.phone}
                 onChange={handleChange}
@@ -660,6 +664,7 @@ export default function MeetDesignerModal() {
             <input
               type="email"
               name="email"
+              aria-label="Email"
               placeholder="Enter your email"
               value={formData.email}
               onChange={handleChange}
@@ -683,6 +688,7 @@ export default function MeetDesignerModal() {
           <div className="modal-card__field">
             <select
               name="city"
+              aria-label="Property city"
               value={formData.city}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -695,22 +701,7 @@ export default function MeetDesignerModal() {
                 Select your property city
               </option>
 
-              <option value="Lucknow">
-                Lucknow
-              </option>
-
-              <option value="Varanasi">
-                Varanasi
-              </option>
-              <option value="varanasi">Noida</option>
-              <option value="varanasi">Gurugram</option>
-              <option value="varanasi">Delhi</option>
-              <option value="varanasi">Agra</option>
-              <option value="varanasi">Kanpur</option>
-              <option value="varanasi">Pune</option>
-              <option value="varanasi">Mumbai</option>
-              <option value="varanasi">Mysuru</option>
-              <option value="varanasi">Bengaluru</option>
+              {cities.map((city) => <option key={city} value={city}>{city}</option>)}
             </select>
 
             {errors.city && (

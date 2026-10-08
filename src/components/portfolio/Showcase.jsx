@@ -1,84 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Showcase.css';
-
-import p1img1 from '../../assets/showcase/p1-1.jpg';
-import p1img2 from '../../assets/showcase/p1-2.jpg';
-import p1video from '../../assets/video1.mp4';
-
-import p2img1 from '../../assets/showcase/p2-1.jpg';
-import p2img2 from '../../assets/showcase/p2-2.jpg';
-import p2video from '../../assets/video2.mp4';
-
-import p3img1 from '../../assets/showcase/p3-1.avif';
-import p3img2 from '../../assets/showcase/p3-2.avif';
-import p3video from '../../assets/video3.mp4';
-
-import p4img1 from '../../assets/showcase/p4-1.jpg';
-import p4img2 from '../../assets/showcase/p4-2.avif';
-import p4video from '../../assets/video4.mp4';
-
-import p5img1 from '../../assets/showcase/p1-2.jpg';
-import p5img2 from '../../assets/showcase/p1-1.jpg';
-import p5video from '../../assets/video5.mp4';
-
-import p6img1 from '../../assets/showcase/p4-2.avif';
-import p6img2 from '../../assets/showcase/p4-1.jpg';
-import p6video from '../../assets/video6.mp4';
+import showcaseProjects from '../../data/showcaseProjects';
+import ScrollReveal from '../common/ScrollReveal';
 
 
-const projects = [
-  {
-    media: [
-      { type: 'video', src: p1video },
-      { type: 'image', src: p1img1 },
-      { type: 'image', src: p1img2 },
-    ],
-    caption: 'Contemporary Dining Room with Display Cabinets',
-  },
-  {
-    media: [
-      { type: 'video', src: p2video },
-      { type: 'image', src: p2img1 },
-      { type: 'image', src: p2img2 },
-    ],
-    caption: 'Modern Bedroom with Bay Window Seating',
-  },
-  {
-    media: [
-      { type: 'video', src: p3video },
-      { type: 'image', src: p3img1 },
-      { type: 'image', src: p3img2 },
-    ],
-    caption: 'Elegant Living Area with Compact Puja Unit',
-  },
-  {
-    media: [
-      { type: 'video', src: p4video },
-      { type: 'image', src: p4img1 },
-      { type: 'image', src: p4img2 },
-    ],
-    caption: 'Minimal Kitchen with Breakfast Counter',
-  },
-  {
-    media: [
-      { type: 'video', src: p5video },
-      { type: 'image', src: p5img1 },
-      { type: 'image', src: p5img2 },
-    ],
-    caption: 'Warm Study Room with Custom Shelving',
-  },
-  {
-    media: [
-      { type: 'video', src: p6video },
-      { type: 'image', src: p6img1 },
-      { type: 'image', src: p6img2 },
-    ],
-    caption: 'Luxury Master Suite with Walk-in Wardrobe',
-  },
-];
-
-
-function ShowcaseCard({ media, caption }) {
+function ShowcaseCard({ project }) {
+  const { media, title, slug } = project;
   const [current, setCurrent] = useState(0);
   const videoRefs = useRef({});
 
@@ -142,11 +70,13 @@ function ShowcaseCard({ media, caption }) {
             <img
               key={index}
               src={item.src}
-              alt={caption}
+              alt={title}
               className={`showcase-card__image ${isActive ? 'active' : ''}`}
             />
           );
         })}
+
+        <Link to={`/projects/${slug}`} className="showcase-card__image-action" aria-label={`View project: ${title}`} />
 
         <div className="showcase-card__dots">
           {media.map((_, index) => (
@@ -161,24 +91,23 @@ function ShowcaseCard({ media, caption }) {
             />
           ))}
         </div>
-
       </div>
 
-      <p className="showcase-card__caption">
-        {caption}
-      </p>
+      <Link to={`/projects/${slug}`} className="showcase-card__project-link">
+        <span className="showcase-card__caption">{title}</span>
+      </Link>
     </div>
   );
 }
 
 
 export default function Showcase() {
-  const total = projects.length;
+  const total = showcaseProjects.length;
   const [startIndex, setStartIndex] = useState(0);
 
   // Desktop: show only 3 cards
   const visibleProjects = [0, 1, 2].map(
-    (offset) => projects[(startIndex + offset) % total]
+    (offset) => showcaseProjects[(startIndex + offset) % total]
   );
 
   const goNext = () => {
@@ -190,11 +119,11 @@ export default function Showcase() {
   };
 
   return (
-    <section className="showcase">
+    <section className="showcase" id="projects">
 
-      <h2 className="showcase__heading">
+      <ScrollReveal as="h2" className="showcase__heading">
         End-to-End Interiors — Delivered Seamlessly
-      </h2>
+      </ScrollReveal>
 
 
       {/* DESKTOP VIEW */}
@@ -213,11 +142,9 @@ export default function Showcase() {
 
           <div className="showcase__grid" key={startIndex}>
             {visibleProjects.map((project, index) => (
-              <ShowcaseCard
-                key={`${startIndex}-${index}`}
-                media={project.media}
-                caption={project.caption}
-              />
+              <ScrollReveal key={`${startIndex}-${index}`} delay={index * 90}>
+                <ShowcaseCard project={project} />
+              </ScrollReveal>
             ))}
           </div>
 
@@ -238,12 +165,10 @@ export default function Showcase() {
       {/* MOBILE AND TABLET VIEW */}
       <div className="showcase__mobile-scroll">
 
-        {projects.map((project, index) => (
-          <ShowcaseCard
-            key={index}
-            media={project.media}
-            caption={project.caption}
-          />
+        {showcaseProjects.map((project, index) => (
+          <ScrollReveal key={project.slug} delay={(index % 3) * 90}>
+            <ShowcaseCard project={project} />
+          </ScrollReveal>
         ))}
 
       </div>

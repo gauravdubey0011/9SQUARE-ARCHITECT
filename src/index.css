@@ -221,3 +221,157 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* Shared visual foundation */
+:root {
+  --text: #625d58;
+  --text-h: #25231f;
+  --bg: #faf8f4;
+  --surface: #fffdf9;
+  --surface-muted: #f1eee8;
+  --border: #e7e1d8;
+  --accent: #a65f48;
+  --accent-dark: #874a38;
+  --accent-soft: #f2e6df;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --content-width: 1320px;
+  --section-space: 48px;
+  --shadow: 0 12px 30px -8px rgba(45, 36, 28, 0.08), 0 3px 8px -2px rgba(45, 36, 28, 0.04);
+}
+
+html,
+body,
+#root {
+  background-color: var(--bg);
+}
+
+body {
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  color: var(--text-h);
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Home page surfaces share a warm, quiet palette and consistent rhythm. */
+body .overview,
+body .showcase,
+body .estimate,
+body .our-process,
+body .visitus,
+body .onestop,
+body .testimonials {
+  padding-block: var(--section-space);
+}
+
+body .overview,
+body .visitus {
+  background-color: var(--bg);
+}
+
+body .showcase,
+body .estimate,
+body .our-process,
+body .onestop {
+  background-color: var(--surface-muted);
+}
+
+body .overview__heading,
+body .showcase__heading,
+body .estimate__heading,
+body .our-process__heading,
+body .our-process__intro h2,
+body .visitus__heading,
+body .onestop__heading {
+  color: var(--text-h);
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+body .overview__text,
+body .estimate__subheading,
+body .estimate-card__description,
+body .our-process__info p,
+body .visitus__detail-text,
+body .onestop__subheading,
+body .onestop-card__description {
+  font-family: var(--font-body);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+body .navbar__pill {
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(231, 225, 216, 0.72);
+}
+
+body .navbar__cta,
+body .estimate-card__button,
+body .visitus__cta {
+  background-color: var(--accent);
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+body .navbar__cta:hover,
+body .estimate-card__button:hover,
+body .visitus__cta:hover {
+  background-color: var(--accent-dark);
+}
+
+body .estimate-card,
+body .onestop-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(45, 36, 28, 0.04);
+}
+
+body .showcase-card__image-wrap,
+body .visitus__image-wrap {
+  border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --section-space: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-space: 32px;
+  }
+}

@@ -680,9 +680,10 @@
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import cities from '../data/cities';
+import { isValidPersonName } from '../utils/formValidation';
 import './HomeInteriorEstimate.css';
 
-const NAME_REGEX = /^[a-zA-Z\s]{2,50}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[6-9]\d{9}$/;
 
@@ -719,7 +720,7 @@ export default function HomeInteriorEstimate() {
     switch (name) {
       case 'name':
         if (!value.trim()) return 'Name is required';
-        if (!NAME_REGEX.test(value.trim())) return 'Enter a valid name (letters only)';
+        if (!isValidPersonName(value)) return 'Enter a valid name';
         return '';
       case 'email':
         if (!value.trim()) return 'Email is required';
@@ -890,8 +891,9 @@ export default function HomeInteriorEstimate() {
 
               <form className="quote-form" onSubmit={handleSubmit} noValidate>
                 <div className="quote-field-wrap">
-                  <label className="quote-label">Name</label>
+                  <label className="quote-label" htmlFor="home-estimate-name">Name</label>
                   <input
+                    id="home-estimate-name"
                     type="text"
                     name="name"
                     placeholder="Enter your name"
@@ -903,8 +905,9 @@ export default function HomeInteriorEstimate() {
                 </div>
 
                 <div className="quote-field-wrap">
-                  <label className="quote-label">Email</label>
+                  <label className="quote-label" htmlFor="home-estimate-email">Email</label>
                   <input
+                    id="home-estimate-email"
                     type="email"
                     name="email"
                     placeholder="Enter your email"
@@ -916,8 +919,9 @@ export default function HomeInteriorEstimate() {
                 </div>
 
                 <div className="quote-field-wrap">
-                  <label className="quote-label">Phone Number</label>
+                  <label className="quote-label" htmlFor="home-estimate-phone">Phone Number</label>
                   <input
+                    id="home-estimate-phone"
                     type="tel"
                     name="phone"
                     placeholder="Enter your phone number"
@@ -930,8 +934,9 @@ export default function HomeInteriorEstimate() {
                 </div>
 
                 <div className="quote-field-wrap">
-                  <label className="quote-label">City</label>
+                  <label className="quote-label" htmlFor="home-estimate-city">City</label>
                   <select
+                    id="home-estimate-city"
                     name="city"
                     value={contactData.city}
                     onChange={handleContactChange}
@@ -940,8 +945,7 @@ export default function HomeInteriorEstimate() {
                     <option value="" disabled>
                       Select your city
                     </option>
-                    <option value="Lucknow">Lucknow</option>
-                    <option value="Varanasi">Varanasi</option>
+                    {cities.map((city) => <option key={city} value={city}>{city}</option>)}
                   </select>
                   {errors.city && <span className="field-error-message">{errors.city}</span>}
                 </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import cities from '../data/cities';
 import './Contact.css';
 
 export default function Contact() {
@@ -54,6 +55,7 @@ export default function Contact() {
           type="text"
           name="name"
           placeholder="Name"
+          aria-label="Name"
           value={formData.name}
           onChange={handleChange}
           required
@@ -63,6 +65,7 @@ export default function Contact() {
           type="email"
           name="email"
           placeholder="Email"
+          aria-label="Email"
           value={formData.email}
           onChange={handleChange}
           required
@@ -72,6 +75,7 @@ export default function Contact() {
           type="tel"
           name="phone"
           placeholder="Phone Number"
+          aria-label="Phone number"
           value={formData.phone}
           onChange={handleChange}
           required
@@ -79,6 +83,7 @@ export default function Contact() {
         />
         <select
           name="city"
+          aria-label="City"
           value={formData.city}
           onChange={handleChange}
           required
@@ -87,17 +92,7 @@ export default function Contact() {
           <option value="" disabled>
             City
           </option>
-          <option value="Lucknow">Lucknow</option>
-          <option value="Varanasi">Varanasi</option>
-          <option value="varanasi">Noida</option>
-            <option value="varanasi">Gurugram</option>
-            <option value="varanasi">Delhi</option>
-            <option value="varanasi">Agra</option>
-            <option value="varanasi">Kanpur</option>
-            <option value="varanasi">Pune</option>
-            <option value="varanasi">Mumbai</option>
-            <option value="varanasi">Mysuru</option>
-            <option value="varanasi">Bengaluru</option>
+          {cities.map((city) => <option key={city} value={city}>{city}</option>)}
         </select>
 
         <button type="submit" className="contact__submit" disabled={status === 'sending'}>

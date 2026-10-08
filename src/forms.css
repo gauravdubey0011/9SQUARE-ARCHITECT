@@ -1,0 +1,166 @@
+:root {
+  --form-purple-50: #fbf9fe;
+  --form-purple-100: #f4eef9;
+  --form-purple-200: #e4d8ef;
+  --form-purple-300: #d2c1e2;
+  --form-purple-600: #765392;
+  --form-purple-700: #604078;
+  --form-ink: #29242f;
+}
+
+/* Form surfaces */
+body .modal-card,
+body .architecture-modal,
+body .architecture-visit-modal__card,
+body .designer-hero__card,
+body .contact__form,
+body .quote-step__right,
+body .wardrobe-contact-form,
+body .talkdesigner__panel {
+  background-color: var(--form-purple-50);
+  color: var(--form-ink);
+}
+
+body .kitchen-estimate,
+body .home-interior-estimate,
+body .wardrobe-estimate {
+  background-color: #f8f4fc;
+}
+
+/* Inputs and select controls */
+body .modal-card__input,
+body .modal-card__select,
+body .modal-card__phone-input,
+body .modal-card__country-select,
+body .architecture-modal__input,
+body .architecture-modal__select,
+body .architecture-visit-modal__input,
+body .architecture-visit-modal__select,
+body .designer-hero__form input,
+body .designer-hero__form select,
+body .contact__input,
+body .contact__select,
+body .quote-input,
+body .form-row input,
+body .form-row select,
+body .wardrobe-form-field input,
+body .wardrobe-form-field select,
+body .talkdesigner__input,
+body .talkdesigner__select,
+body .wall-size-row select {
+  border-color: var(--form-purple-200);
+  background-color: var(--form-purple-50);
+  color: var(--form-ink);
+}
+
+body .modal-card__input:focus,
+body .modal-card__select:focus,
+body .modal-card__phone-row:focus-within,
+body .architecture-modal__input:focus,
+body .architecture-modal__select:focus,
+body .architecture-visit-modal__input:focus,
+body .architecture-visit-modal__select:focus,
+body .designer-hero__form input:focus,
+body .designer-hero__form select:focus,
+body .contact__input:focus,
+body .contact__select:focus,
+body .quote-input:focus,
+body .form-row input:focus,
+body .form-row select:focus,
+body .wardrobe-form-field input:focus,
+body .wardrobe-form-field select:focus,
+body .talkdesigner__input:focus,
+body .talkdesigner__select:focus,
+body .wall-size-row select:focus {
+  border-color: var(--form-purple-600);
+  outline-color: var(--form-purple-600);
+  box-shadow: 0 0 0 3px rgba(118, 83, 146, 0.14);
+}
+
+body .modal-card__heading,
+body .architecture-modal__heading,
+body .architecture-visit-modal__heading,
+body .designer-hero__card-note,
+body .contact__heading,
+body .quote-step__right-heading,
+body .wardrobe-contact-form h3,
+body .talkdesigner__heading {
+  color: var(--form-purple-700);
+}
+
+/* Primary form actions */
+body .modal-card__submit,
+body .architecture-modal__submit,
+body .architecture-visit-modal__submit,
+body .designer-hero__submit,
+body .contact__submit,
+body .next-button,
+body .estimate-next-button,
+body .quote-submit-button,
+body .wardrobe-next-button,
+body .wardrobe-submit-button,
+body .talkdesigner__submit {
+  border-color: var(--form-purple-600);
+  background-color: var(--form-purple-600);
+  color: #fff;
+}
+
+body .modal-card__submit:hover:not(:disabled),
+body .architecture-modal__submit:hover:not(:disabled),
+body .architecture-visit-modal__submit:hover:not(:disabled),
+body .designer-hero__submit:hover:not(:disabled),
+body .contact__submit:hover:not(:disabled),
+body .next-button:hover:not(:disabled),
+body .estimate-next-button:hover:not(:disabled),
+body .quote-submit-button:hover:not(:disabled),
+body .wardrobe-next-button:hover:not(:disabled),
+body .wardrobe-submit-button:hover:not(:disabled),
+body .talkdesigner__submit:hover:not(:disabled) {
+  background-color: var(--form-purple-700);
+  border-color: var(--form-purple-700);
+}
+
+body .modal-card__submit:disabled,
+body .architecture-modal__submit:disabled,
+body .architecture-visit-modal__submit:disabled,
+body .designer-hero__submit:disabled,
+body .contact__submit:disabled,
+body .next-button:disabled,
+body .estimate-next-button:disabled,
+body .quote-submit-button:disabled,
+body .wardrobe-next-button:disabled,
+body .wardrobe-submit-button:disabled,
+body .talkdesigner__submit:disabled {
+  background-color: #c9bfd2;
+  border-color: #c9bfd2;
+}
+
+/* Selected estimator choices and secondary actions */
+body .radio-option--active,
+body .shape-card--active,
+body .material-option--active,
+body .estimate-option.active,
+body .wardrobe-option.active {
+  border-color: var(--form-purple-600);
+  background-color: var(--form-purple-100);
+  color: var(--form-purple-700);
+}
+
+body .radio-option--active .custom-radio,
+body .shape-card--active .custom-radio {
+  border-color: var(--form-purple-600);
+  background-color: var(--form-purple-600);
+}
+
+body .back-button,
+body .quote-back-button,
+body .wardrobe-back-button {
+  border-color: var(--form-purple-300);
+  color: var(--form-purple-700);
+}
+
+body .modal-card__input--error,
+body .wardrobe-form-field input.input-error,
+body .wardrobe-form-field select.input-error {
+  border-color: #c65d65;
+}

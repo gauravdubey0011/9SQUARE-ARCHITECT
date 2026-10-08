@@ -16,6 +16,9 @@ import ArchitectureContactModal from './components/architecture/ArchitectureCont
 import LuxuryInteriors from './pages/LuxuryInteriors';
 import ValueInteriors from './pages/ValueInteriors';
 import IntroAnimation from './components/intro/IntroAnimation';
+import ProjectDetails from './pages/ProjectDetails';
+import Contact from './pages/Contact';
+import './forms.css';
 
 function App() {
   return (
@@ -29,6 +32,8 @@ function App() {
         <ArchitectureContactModal />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects/:slug" element={<ProjectDetails />} />
           <Route path="/estimate/home-interior" element={<HomeInteriorEstimate />} />
           <Route path="/interiors/modular-interiors" element={<ModularInteriors />} />
           <Route path="/interiors/full-home-interiors" element={<FullHomeInteriors />} />

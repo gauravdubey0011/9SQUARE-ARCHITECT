@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './DesignerHero.css';
+import cities from '../../data/cities';
 
 import heroImage from '../../assets/slide2.jpg';
 
@@ -49,16 +50,15 @@ export default function DesignerHero() {
         <p className="designer-hero__card-note">All the fields marked with * are required</p>
 
         <form className="designer-hero__form" onSubmit={handleSubmit}>
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="tel" name="phone" placeholder="Phone Number" required />
+          <input type="text" name="name" placeholder="Name" aria-label="Name" autoComplete="name" required />
+          <input type="email" name="email" placeholder="Email" aria-label="Email" autoComplete="email" required />
+          <input type="tel" name="phone" placeholder="Phone Number" aria-label="Phone number" autoComplete="tel" required />
 
-          <select name="city" defaultValue="" required>
+          <select name="city" aria-label="City" defaultValue="" required>
             <option value="" disabled>
               City
             </option>
-            <option value="Lucknow">Lucknow</option>
-            <option value="Varanasi">Varanasi</option>
+            {cities.map((city) => <option key={city} value={city}>{city}</option>)}
           </select>
 
           <button type="submit" className="designer-hero__submit" disabled={status === 'sending'}>

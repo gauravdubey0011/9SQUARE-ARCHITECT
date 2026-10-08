@@ -146,6 +146,7 @@ export default function ArchitectureVisitModal({ isOpen, onClose }) {
           <input
             type="text"
             name="name"
+            aria-label="Name"
             placeholder="Enter your name"
             value={formData.name}
             onChange={handleChange}
@@ -157,6 +158,7 @@ export default function ArchitectureVisitModal({ isOpen, onClose }) {
           <input
             type="tel"
             name="phone"
+            aria-label="Phone number"
             placeholder="Enter your phone number"
             value={formData.phone}
             onChange={handleChange}
@@ -168,6 +170,7 @@ export default function ArchitectureVisitModal({ isOpen, onClose }) {
           <input
             type="email"
             name="email"
+            aria-label="Email"
             placeholder="Enter your email"
             value={formData.email}
             onChange={handleChange}
@@ -178,6 +181,7 @@ export default function ArchitectureVisitModal({ isOpen, onClose }) {
 
           <select
             name="location"
+            aria-label="Experience centre location"
             value={formData.location}
             onChange={handleChange}
             required

@@ -34,19 +34,20 @@ import Testimonials from '../components/portfolio/Testimonials';
 import Overview from '../components/portfolio/Overview';
 import Footer from '../components/layout/Footer';
 import OurProcess from '../components/portfolio/OurProcess';
+import ScrollReveal from '../components/common/ScrollReveal';
 export default function Home() {
   return (
     <>
       <Slideshow />
-      <Overview />
+      <ScrollReveal><Overview /></ScrollReveal>
       <Showcase />
-      <OneStopShop />
+      <ScrollReveal><OneStopShop /></ScrollReveal>
       {/* <WhyChooseTicker /> */}
-      <EstimateSection />
-      <OurProcess />
-      <VisitUs />
-      <Testimonials />
-      <DesignerHero />
+      <ScrollReveal><EstimateSection /></ScrollReveal>
+      <ScrollReveal><OurProcess /></ScrollReveal>
+      <ScrollReveal><VisitUs /></ScrollReveal>
+      <ScrollReveal><Testimonials /></ScrollReveal>
+      <ScrollReveal><DesignerHero /></ScrollReveal>
       <Footer />
     </>
   );

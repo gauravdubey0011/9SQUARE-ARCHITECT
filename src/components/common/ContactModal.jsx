@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useModal } from '../../context/ModalContext';
+import cities from '../../data/cities';
 import './MeetDesignerModal.css'; // shared modal chrome styles
 import './ContactModal.css'; // contact-specific field styles
 
@@ -61,6 +62,7 @@ export default function ContactModal() {
             type="text"
             name="name"
             placeholder="Name"
+            aria-label="Name"
             value={formData.name}
             onChange={handleChange}
             required
@@ -70,6 +72,7 @@ export default function ContactModal() {
             type="email"
             name="email"
             placeholder="Email"
+            aria-label="Email"
             value={formData.email}
             onChange={handleChange}
             required
@@ -79,6 +82,7 @@ export default function ContactModal() {
             type="tel"
             name="phone"
             placeholder="Phone Number"
+            aria-label="Phone number"
             value={formData.phone}
             onChange={handleChange}
             required
@@ -86,6 +90,7 @@ export default function ContactModal() {
           />
           <select
             name="city"
+            aria-label="City"
             value={formData.city}
             onChange={handleChange}
             required
@@ -94,8 +99,7 @@ export default function ContactModal() {
             <option value="" disabled>
               City
             </option>
-            <option value="Lucknow">Lucknow</option>
-            <option value="Varanasi">Varanasi</option>
+            {cities.map((city) => <option key={city} value={city}>{city}</option>)}
           </select>
 
           <button type="submit" className="modal-card__submit" disabled={status === 'sending'}>

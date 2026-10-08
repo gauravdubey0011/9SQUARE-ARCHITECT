@@ -507,13 +507,14 @@
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import cities from '../data/cities';
+import { isValidPersonName } from '../utils/formValidation';
 import './WardrobeEstimate.css';
 
 const wardrobeTypes = ['Sliding', 'Swing'];
 
 const materials = ['Laminate', 'Acrylic', 'Membrane', 'Veneer', 'PU Finish'];
 
-const NAME_REGEX = /^[a-zA-Z\s]{2,50}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[6-9]\d{9}$/;
 
@@ -551,7 +552,7 @@ export default function WardrobeEstimate() {
     switch (name) {
       case 'name':
         if (!value.trim()) return 'Name is required';
-        if (!NAME_REGEX.test(value.trim())) return 'Enter a valid name (letters only)';
+        if (!isValidPersonName(value)) return 'Enter a valid name';
         return '';
       case 'email':
         if (!value.trim()) return 'Email is required';
@@ -819,8 +820,9 @@ export default function WardrobeEstimate() {
                 <p>Fill in your details and we'll contact you.</p>
 
                 <div className="wardrobe-form-field">
-                  <label>Name</label>
+                  <label htmlFor="wardrobe-name">Name</label>
                   <input
+                    id="wardrobe-name"
                     type="text"
                     name="name"
                     placeholder="Enter your name"
@@ -832,8 +834,9 @@ export default function WardrobeEstimate() {
                 </div>
 
                 <div className="wardrobe-form-field">
-                  <label>Email</label>
+                  <label htmlFor="wardrobe-email">Email</label>
                   <input
+                    id="wardrobe-email"
                     type="email"
                     name="email"
                     placeholder="Enter your email"
@@ -845,8 +848,9 @@ export default function WardrobeEstimate() {
                 </div>
 
                 <div className="wardrobe-form-field">
-                  <label>Phone Number</label>
+                  <label htmlFor="wardrobe-phone">Phone Number</label>
                   <input
+                    id="wardrobe-phone"
                     type="tel"
                     name="phone"
                     placeholder="Enter your phone number"
@@ -859,8 +863,9 @@ export default function WardrobeEstimate() {
                 </div>
 
                 <div className="wardrobe-form-field">
-                  <label>City</label>
+                  <label htmlFor="wardrobe-city">City</label>
                   <select
+                    id="wardrobe-city"
                     name="city"
                     value={contactData.city}
                     onChange={handleContactChange}
@@ -869,8 +874,7 @@ export default function WardrobeEstimate() {
                     <option value="" disabled>
                       Select your city
                     </option>
-                    <option value="Lucknow">Lucknow</option>
-                    <option value="Varanasi">Varanasi</option>
+                    {cities.map((city) => <option key={city} value={city}>{city}</option>)}
                   </select>
                   {errors.city && <span className="field-error-message">{errors.city}</span>}
                 </div>

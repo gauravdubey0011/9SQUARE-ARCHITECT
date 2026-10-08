@@ -1,265 +1,306 @@
+/* =========================================================
+   ARCHITECTURE PROJECT CATEGORIES
+========================================================= */
+
 .architecture-project-categories {
   width: 100%;
-  padding: 60px 24px 70px;
+  background: #f7f6f1;
   box-sizing: border-box;
-  background-color: #ffffff;
 }
 
-.architecture-project-categories__container {
+
+/* =========================================================
+   CATEGORY NAVIGATION
+========================================================= */
+
+.architecture-project-categories__nav {
   width: 100%;
-  max-width: 1550px;
-  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 38px;
+
+  padding: 24px 30px 30px;
+
+  border-bottom: 1px solid #222;
+
+  box-sizing: border-box;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
 }
 
-.architecture-project-categories__heading {
-  margin: 0 0 50px;
-
-  text-align: center;
-
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.25;
-
-  color: #1c1c1c;
-}
-
-
-/* =========================
-   GRID
-========================= */
-
-.architecture-project-categories__grid {
-  display: grid;
-
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 16px;
-
-  width: 100%;
+.architecture-project-categories__nav::-webkit-scrollbar {
+  display: none;
 }
 
 
-/* =========================
-   CARD
-========================= */
+/* =========================================================
+   TAB
+========================================================= */
 
-.architecture-project-card {
+.architecture-project-tab {
   position: relative;
 
-  display: block;
+  display: flex;
+  align-items: flex-start;
 
+  gap: 3px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #555;
+
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+
+  font-size: 1.25rem;
+
+  font-weight: 400;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.architecture-project-tab sup {
+  position: relative;
+
+  top: -4px;
+
+  font-size: 0.65rem;
+
+  line-height: 1;
+
+  color: #555;
+
+  transition: color 0.25s ease;
+}
+
+
+/* =========================================================
+   ACTIVE TAB
+========================================================= */
+
+.architecture-project-tab--active {
+  color: #111;
+}
+
+
+.architecture-project-tab--active::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: -31px;
+
+  height: 1px;
+
+  background: #111;
+}
+
+
+.architecture-project-tab--active sup {
+  color: #111;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.architecture-project-tab:hover {
+  color: #111;
+}
+
+
+/* =========================================================
+   IMAGE GRID
+========================================================= */
+
+.architecture-project-grid {
   width: 100%;
 
-  aspect-ratio: 1.7 / 1;
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  grid-auto-rows: 280px;
+
+  gap: 30px;
+
+  padding: 40px 30px 70px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   IMAGE ITEM
+========================================================= */
+
+.architecture-project-item {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
 
   overflow: hidden;
 
-  text-decoration: none;
-
-  background-color: #ddd;
+  background: #ddd;
 
   cursor: pointer;
 }
 
 
-/* =========================
+/* =========================================================
+   LARGE IMAGE
+========================================================= */
+
+.architecture-project-item--large {
+  grid-column: span 2;
+}
+
+
+/* =========================================================
    IMAGE
-========================= */
+========================================================= */
 
-.architecture-project-card__image {
-  position: absolute;
-
-  inset: 0;
-
+.architecture-project-item img {
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
-
   display: block;
 
-  transform: scale(1);
+  object-fit: cover;
 
   transition:
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-/* =========================
-   DARK OVERLAY
-========================= */
-
-.architecture-project-card__overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.08);
-
-  transition:
-    background-color 0.4s ease;
-}
-
-
-/* =========================
-   TEXT
-========================= */
-
-.architecture-project-card__content {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 2;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 24px;
-
-  box-sizing: border-box;
-
-  text-align: center;
-}
-
-
-.architecture-project-card__title {
-  margin: 0;
-
-  max-width: 90%;
-
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-
-  font-size: 1.65rem;
-
-  font-weight: 500;
-
-  line-height: 1.25;
-
-  color: #ffffff;
-
-  text-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.45);
-
-  transform: translateY(0);
-
-  transition:
-    transform 0.4s ease;
-}
-
-
-/* =========================
+/* =========================================================
    HOVER
-========================= */
+========================================================= */
 
-@media (hover: hover) and (pointer: fine) {
-
-  .architecture-project-card:hover
-  .architecture-project-card__image {
-    transform: scale(1.08);
-  }
-
-  .architecture-project-card:hover
-  .architecture-project-card__overlay {
-    background: rgba(0, 0, 0, 0.28);
-  }
-
-  .architecture-project-card:hover
-  .architecture-project-card__title {
-    transform: translateY(-3px);
-  }
+.architecture-project-item:hover img {
+  transform: scale(1.04);
 }
 
 
-/* =========================
-   FOCUS
-========================= */
-
-.architecture-project-card:focus-visible {
-  outline: 3px solid #7b3fa0;
-  outline-offset: 3px;
-}
-
-
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
 @media (max-width: 1000px) {
 
-  .architecture-project-categories {
-    padding: 52px 20px 60px;
+  .architecture-project-categories__nav {
+    gap: 28px;
+
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  .architecture-project-categories__heading {
-    font-size: 1.75rem;
-    margin-bottom: 38px;
+
+  .architecture-project-tab {
+    font-size: 1.1rem;
   }
 
-  .architecture-project-categories__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+
+  .architecture-project-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    grid-auto-rows: 260px;
+
+    gap: 16px;
+
+    padding: 30px 20px 55px;
   }
 
-  .architecture-project-card {
-    aspect-ratio: 1.55 / 1;
-  }
 
-  .architecture-project-card__title {
-    font-size: 1.35rem;
+  .architecture-project-item--large {
+    grid-column: span 2;
   }
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 600px) {
 
-  .architecture-project-categories {
-    padding: 42px 16px 50px;
+  .architecture-project-categories__nav {
+    gap: 24px;
+
+    padding: 20px 16px 24px;
   }
 
-  .architecture-project-categories__heading {
-    font-size: 1.45rem;
-    margin-bottom: 28px;
+
+  .architecture-project-tab {
+    font-size: 0.95rem;
   }
 
-  .architecture-project-categories__grid {
+
+  .architecture-project-tab--active::after {
+    bottom: -25px;
+  }
+
+
+  .architecture-project-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+
+    grid-auto-rows: 240px;
+
+    gap: 12px;
+
+    padding: 20px 16px 45px;
   }
 
-  .architecture-project-card {
-    aspect-ratio: 1.55 / 1;
-  }
 
-  .architecture-project-card__content {
-    padding: 18px;
-  }
-
-  .architecture-project-card__title {
-    font-size: 1.25rem;
+  .architecture-project-item--large {
+    grid-column: span 1;
   }
 }
 
 
-/* =========================
+/* =========================================================
    SMALL MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 380px) {
 
-  .architecture-project-categories {
+  .architecture-project-categories__nav {
+    gap: 20px;
+
     padding-left: 12px;
     padding-right: 12px;
   }
 
-  .architecture-project-card__title {
-    font-size: 1.1rem;
+
+  .architecture-project-tab {
+    font-size: 0.88rem;
+  }
+
+
+  .architecture-project-grid {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }

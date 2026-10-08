@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useModal } from '../../context/ModalContext';
+import cities from '../../data/cities';
 import './ArchitectureContactModal.css';
 
 export default function ArchitectureContactModal() {
@@ -120,6 +121,7 @@ export default function ArchitectureContactModal() {
           <input
             type="text"
             name="name"
+            aria-label="Name"
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
@@ -130,6 +132,7 @@ export default function ArchitectureContactModal() {
           <input
             type="tel"
             name="phone"
+            aria-label="Phone number"
             placeholder="Phone Number"
             value={formData.phone}
             onChange={handleChange}
@@ -142,6 +145,7 @@ export default function ArchitectureContactModal() {
           <input
             type="email"
             name="email"
+            aria-label="Email"
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
@@ -151,6 +155,7 @@ export default function ArchitectureContactModal() {
 
           <select
             name="location"
+            aria-label="Project city"
             value={formData.location}
             onChange={handleChange}
             required
@@ -160,13 +165,7 @@ export default function ArchitectureContactModal() {
               Select your location
             </option>
 
-            <option value="Lucknow">
-              Lucknow
-            </option>
-
-            <option value="Varanasi">
-              Varanasi
-            </option>
+            {cities.map((city) => <option key={city} value={city}>{city}</option>)}
           </select>
 
           <button
