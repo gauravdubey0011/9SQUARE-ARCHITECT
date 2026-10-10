@@ -39,7 +39,7 @@ const cards = [
 
 export default function OneStopShop() {
   return (
-    <section className="onestop">
+    <section className="onestop" id="interiors">
       <h2 className="onestop__heading">Our Offerings</h2>
       <p className="onestop__subheading">
         Be it end-to-end interiors, renovation or modular solutions, we have it all for your home

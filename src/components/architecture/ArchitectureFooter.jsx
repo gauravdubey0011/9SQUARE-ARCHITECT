@@ -1,23 +1,17 @@
 import './ArchitectureFooter.css';
 
 const architectureProjects = [
-  'Workspace',
   'Residential',
-  'Culture',
-  'Education',
-  'Wellness',
   'Hospitality',
-  'Adaptive Re Use',
-  'Industrial',
+  'Workspaces',
+  'Master Planning',
 ];
 
 const interiorProjects = [
-  'Workspace',
-  'Residential',
-  'Culture',
-  'Wellness',
-  'Hospitality',
-  'Retail',
+  'Modular Interiors',
+  'Full Home Interiors',
+  '9Square Kitchen',
+  '9Square Wardrobe',
 ];
 
 export default function ArchitectureFooter() {
@@ -91,13 +85,7 @@ export default function ArchitectureFooter() {
           <ul>
             {interiorProjects.map((project) => (
               <li key={project}>
-                <a
-                  href="https://google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {project}
-                </a>
+                <a href="/#interiors">{project}</a>
               </li>
             ))}
           </ul>
