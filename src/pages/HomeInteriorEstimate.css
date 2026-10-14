@@ -502,7 +502,7 @@
 
 @media (max-width: 600px) {
   .home-interior-estimate {
-    padding: 90px 15px 40px;
+    padding: 128px 15px 40px;
   }
 
   .estimate-page-header {
@@ -719,7 +719,7 @@
 
 @media (max-width: 600px) {
   .home-interior-estimate {
-    padding: 90px 15px 40px;
+    padding: 128px 15px 40px;
   }
 
   .estimate-page-header {
@@ -838,7 +838,7 @@
 
 @media (max-width: 380px) {
   .home-interior-estimate {
-    padding: 84px 12px 32px;
+    padding: 120px 12px 32px;
   }
 
   .estimate-page-header h1 {

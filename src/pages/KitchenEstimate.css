@@ -438,7 +438,7 @@
 
 @media (max-width: 600px) {
   .kitchen-estimate {
-    padding: 85px 15px 40px;
+    padding: 128px 15px 40px;
   }
 
   .kitchen-estimate__header {
@@ -530,7 +530,7 @@
 
 @media (max-width: 380px) {
   .kitchen-estimate {
-    padding: 80px 12px 32px;
+    padding: 120px 12px 32px;
   }
 
   .kitchen-estimate__header h1 {
