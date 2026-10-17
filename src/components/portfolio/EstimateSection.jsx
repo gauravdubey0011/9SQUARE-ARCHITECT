@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './EstimateSection.css';
 
-
 import homeIcon from '../../assets/icons/interior-design.png';
 import homeBadge from '../../assets/icons/calculator.png';
 
@@ -67,10 +66,7 @@ export default function EstimateSection() {
       <div className="estimate__grid">
         {cards.map((card) => (
           <div className="estimate-card" key={card.title}>
-            {/* <div className="estimate-card__icons">
-              <div className="estimate-card__icon-main" />
-              <div className="estimate-card__icon-badge" />
-            </div> */}
+
 
               <div className="estimate-card__icons">
                 <div className="estimate-card__icon-main">
@@ -89,8 +85,6 @@ export default function EstimateSection() {
                   />
                 </div>
               </div>
-
-
 
             <h3 className="estimate-card__title">
               {card.title}

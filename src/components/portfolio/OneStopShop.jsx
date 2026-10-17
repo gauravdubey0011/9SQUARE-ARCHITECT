@@ -12,28 +12,24 @@ const cards = [
     title: 'Modular Interiors',
     description: 'Functional kitchen, wardrobe and storage',
     link: '/interiors/modular-interiors',
-    internal: true,
   },
   {
     image: card2,
     title: 'Full Home Interiors',
     description: 'Turnkey interior solutions for your home',
     link: '/interiors/full-home-interiors',
-    internal: true,
   },
   {
   image: card3,
   title: 'Kitchen Interiors',
   description: 'Tailored interiors that redefine elegance',
   link: '/interiors/luxury-interiors',
-  internal: true,
 },
 {
   image: card4,
   title: 'Wardrobe Interiors',
   description: 'Quality interiors at very affordable prices',
   link: '/interiors/value-interiors',
-  internal: true,
 },
 ];
 
@@ -47,26 +43,22 @@ export default function OneStopShop() {
       </p>
 
       <div className="onestop__grid">
-        {cards.map((card, index) => (
-          <div className="onestop-card" key={index}>
+        {cards.map((card) => (
+          <Link
+            to={card.link}
+            className="onestop-card"
+            key={card.title}
+            aria-label={`Explore ${card.title}`}
+          >
             <div className="onestop-card__image-wrap">
               <img src={card.image} alt={card.title} className="onestop-card__image" />
             </div>
             <div className="onestop-card__body">
               <h3 className="onestop-card__title">{card.title}</h3>
               <p className="onestop-card__description">{card.description}</p>
-
-              {card.internal ? (
-                <Link to={card.link} className="onestop-card__arrow" aria-label={`Explore ${card.title}`}>
-                  ›
-                </Link>
-              ) : (
-                <a href={card.link} className="onestop-card__arrow" aria-label={`Explore ${card.title}`}>
-                  ›
-                </a>
-              )}
+              <span className="onestop-card__arrow" aria-hidden="true">›</span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
