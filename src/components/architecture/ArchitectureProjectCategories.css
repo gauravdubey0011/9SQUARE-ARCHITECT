@@ -167,6 +167,12 @@
   cursor: pointer;
 }
 
+.architecture-project-item:focus-visible {
+  outline: 2px solid #8d7b68;
+  outline-offset: 3px;
+  z-index: 1;
+}
+
 
 /* =========================================================
    LARGE IMAGE
@@ -193,6 +199,38 @@
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.architecture-project-item__caption {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 54px 22px 22px;
+  color: #fff;
+  background: linear-gradient(transparent, rgb(15 15 15 / 76%));
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.architecture-project-item__category {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.architecture-project-item__title {
+  max-width: 34ch;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
 
 /* =========================================================
    HOVER
@@ -200,6 +238,28 @@
 
 .architecture-project-item:hover img {
   transform: scale(1.04);
+}
+
+.architecture-project-item:hover .architecture-project-item__caption,
+.architecture-project-item:focus-visible .architecture-project-item__caption,
+.architecture-project-item:focus .architecture-project-item__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .architecture-project-item__caption {
+    opacity: 1;
+    transform: none;
+    padding: 46px 18px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .architecture-project-item img,
+  .architecture-project-item__caption {
+    transition: none;
+  }
 }
 
 

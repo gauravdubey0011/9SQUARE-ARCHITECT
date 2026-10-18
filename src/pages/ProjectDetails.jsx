@@ -14,6 +14,7 @@ export default function ProjectDetails() {
   if (!project) return <Navigate to="/" replace />;
 
   const activeMedia = project.media[activeIndex];
+  const projectPoster = project.media.find((media) => media.type === 'image');
   const otherProjects = showcaseProjects.filter((item) => item.slug !== project.slug).slice(0, 3);
 
   return (
@@ -31,9 +32,23 @@ export default function ProjectDetails() {
         <div className="project-page__gallery">
           <div className="project-page__featured-media">
             {activeMedia.type === 'video' ? (
-              <video key={activeMedia.src} src={activeMedia.src} controls playsInline preload="metadata" />
+              <video
+                key={activeMedia.src}
+                src={activeMedia.src}
+                poster={projectPoster?.src}
+                controls
+                playsInline
+                preload="none"
+              />
             ) : (
-              <img key={activeMedia.src} src={activeMedia.src} alt={project.title} />
+              <img
+                key={activeMedia.src}
+                src={activeMedia.src}
+                srcSet={activeMedia.srcSet}
+                sizes="(max-width: 1120px) 100vw, 1120px"
+                alt={project.title}
+                decoding="async"
+              />
             )}
           </div>
           <div className="project-page__thumbnails" aria-label="Project gallery">
@@ -47,9 +62,23 @@ export default function ProjectDetails() {
                 aria-pressed={activeIndex === index}
               >
                 {media.type === 'video' ? (
-                  <video src={media.src} muted playsInline preload="metadata" />
+                  <img
+                    src={projectPoster?.src}
+                    srcSet={projectPoster?.srcSet}
+                    sizes="120px"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
                 ) : (
-                  <img src={media.src} alt="" />
+                  <img
+                    src={media.src}
+                    srcSet={media.srcSet}
+                    sizes="120px"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
                 )}
                 {media.type === 'video' && <span aria-hidden="true">▶</span>}
               </button>
@@ -78,7 +107,14 @@ export default function ProjectDetails() {
             return (
               <ScrollReveal key={item.slug} delay={index * 90}>
                 <Link to={`/projects/${item.slug}`} className="project-page__related-card">
-                  <img src={image.src} alt="" />
+                  <img
+                    src={image.src}
+                    srcSet={image.srcSet}
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
                   <span>{item.title}</span>
                   <span className="project-page__related-arrow" aria-hidden="true">↗</span>
                 </Link>

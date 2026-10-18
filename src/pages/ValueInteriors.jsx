@@ -13,7 +13,8 @@ import img6 from '../assets/value-interiors/value6.avif';
 import img7 from '../assets/value-interiors/value7.avif';
 import img8 from '../assets/value-interiors/value8.avif';
 import img9 from '../assets/value-interiors/value9.jpeg';
-import img10 from '../assets/value-interiors/value10.jpg';
+import img10 from '../assets/optimized/images/gallery-highlight-1600.webp';
+import img10Small from '../assets/optimized/images/gallery-highlight-800.webp';
 
 const valueDesigns = [
   {
@@ -54,6 +55,7 @@ const valueDesigns = [
   },
   {
     image: img10,
+    srcSet: `${img10Small} 800w, ${img10} 1600w`,
     caption: 'Complete Value Interior Solution',
   },
 ];

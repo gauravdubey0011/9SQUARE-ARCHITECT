@@ -210,15 +210,78 @@ const projectCategories = {
   ],
 };
 
+const projectCaptions = {
+  Residential: [
+    'A study in modern living',
+    'A home shaped by natural light',
+    'Clean lines, calm spaces',
+    'A thoughtful sense of arrival',
+    'Everyday living, considered',
+    'A balance of form and comfort',
+    'Spaces made for gathering',
+    'Modern character, lasting warmth',
+    'A home connected to its setting',
+    'Simple forms, enduring appeal',
+  ],
+  Hospitality: [
+    'An invitation to slow down',
+    'A welcoming sense of place',
+    'Designed around the guest',
+    'A considered arrival experience',
+    'Comfort with a distinct character',
+    'Spaces made for connection',
+    'A calm retreat from the everyday',
+    'Hospitality with a human touch',
+    'A setting to remember',
+    'Details that make a stay',
+  ],
+  Workspaces: [
+    'A more considered way to work',
+    'Room for focus and collaboration',
+    'A workplace with clarity',
+    'Spaces that support new ideas',
+    'Bringing people together at work',
+    'A calmer working environment',
+    'Purposeful spaces for teams',
+    'A fresh perspective on the office',
+    'Designed for the working day',
+    'Flexible by design',
+  ],
+  'Master Planning': [
+    'A vision at neighbourhood scale',
+    'Connecting people and place',
+    'Planning for a sense of belonging',
+    'A framework for future growth',
+    'Spaces shaped around community',
+    'Bringing landscape into the plan',
+    'A connected approach to place',
+    'Planning with people in mind',
+    'A new perspective on the everyday',
+    'Building a lasting sense of place',
+  ],
+};
+
+const projectsByCategory = Object.fromEntries(
+  Object.entries(projectCategories).map(([category, images]) => [
+    category,
+    images.map((image, index) => ({
+      image,
+      caption: projectCaptions[category][index],
+      category,
+      index,
+    })),
+  ]),
+);
+
 // =========================
 // ALL PROJECTS
 // =========================
 
 const allProjects = [
-  ...projectCategories.Residential,
-  ...projectCategories.Hospitality,
-  ...projectCategories.Workspaces,
-  ...projectCategories['Master Planning'],
+  ...projectsByCategory.Residential,
+  ...projectsByCategory.Hospitality,
+  ...projectsByCategory.Workspaces,
+  ...projectsByCategory['Master Planning'],
 ];
 
 const tabs = [
@@ -250,7 +313,7 @@ export default function ArchitectureProjectCategories() {
   const images =
     activeTab === 'All Projects'
       ? allProjects
-      : projectCategories[activeTab];
+      : projectsByCategory[activeTab];
 
   return (
     <section className="architecture-project-categories">
@@ -287,21 +350,34 @@ export default function ArchitectureProjectCategories() {
 
       <div className="architecture-project-grid">
 
-        {images.map((image, index) => (
+        {images.map((project, index) => (
           <div
             className={`architecture-project-item ${
               index % 4 === 2 || index % 4 === 3
                 ? 'architecture-project-item--large'
                 : ''
             }`}
-            key={`${activeTab}-${index}`}
+            key={`${project.category}-${project.index}`}
+            tabIndex={0}
+            role="img"
+            aria-label={`${project.category}: ${project.caption}`}
           >
 
             <img
-              src={image}
-              alt={`${activeTab} architecture project ${index + 1}`}
-              loading={index < 6 ? 'eager' : 'lazy'}
+              src={project.image}
+              alt=""
+              loading={index < 3 ? 'eager' : 'lazy'}
+              decoding="async"
             />
+
+            <div className="architecture-project-item__caption" aria-hidden="true">
+              <span className="architecture-project-item__category">
+                {project.category}
+              </span>
+              <span className="architecture-project-item__title">
+                {project.caption}
+              </span>
+            </div>
 
           </div>
         ))}

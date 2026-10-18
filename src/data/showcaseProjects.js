@@ -1,17 +1,18 @@
 import p1img1 from '../assets/showcase/p1-1.jpg';
 import p1img2 from '../assets/showcase/p1-2.jpg';
-import p1video from '../assets/video1.mp4';
+import p1video from '../assets/optimized/video1.mp4';
 import p2img1 from '../assets/showcase/p2-1.jpg';
 import p2img2 from '../assets/showcase/p2-2.jpg';
-import p2video from '../assets/video2.mp4';
+import p2video from '../assets/optimized/video2.mp4';
 import p3img1 from '../assets/showcase/p3-1.avif';
 import p3img2 from '../assets/showcase/p3-2.avif';
-import p3video from '../assets/video3.mp4';
-import p4img1 from '../assets/showcase/p4-1.jpg';
+import p3video from '../assets/optimized/video3.mp4';
+import p4img1 from '../assets/optimized/images/gallery-highlight-1600.webp';
+import p4img1Small from '../assets/optimized/images/gallery-highlight-800.webp';
 import p4img2 from '../assets/showcase/p4-2.avif';
-import p4video from '../assets/video4.mp4';
-import p5video from '../assets/video5.mp4';
-import p6video from '../assets/video6.mp4';
+import p4video from '../assets/optimized/video4.mp4';
+import p5video from '../assets/optimized/video5.mp4';
+import p6video from '../assets/optimized/video6.mp4';
 
 const showcaseProjects = [
   {
@@ -32,7 +33,15 @@ const showcaseProjects = [
   {
     slug: 'minimal-kitchen-breakfast-counter',
     title: 'Minimal Kitchen with Breakfast Counter',
-    media: [{ type: 'video', src: p4video }, { type: 'image', src: p4img1 }, { type: 'image', src: p4img2 }],
+    media: [
+      { type: 'video', src: p4video },
+      {
+        type: 'image',
+        src: p4img1,
+        srcSet: `${p4img1Small} 800w, ${p4img1} 1600w`,
+      },
+      { type: 'image', src: p4img2 },
+    ],
   },
   {
     slug: 'warm-study-custom-shelving',

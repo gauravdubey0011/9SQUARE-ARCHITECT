@@ -2,7 +2,7 @@ import CategoryHero from '../components/category/CategoryHero';
 import CategoryGallery from '../components/category/CategoryGallery';
 import Footer from '../components/layout/Footer';
 
-import heroImage from '../assets/modular-interiors/kitchen10.jpg';
+import heroImage from '../assets/optimized/images/gallery-highlight-1600.webp';
 
 import img1 from '../assets/modular-interiors/kitchen1.jpg';
 import img2 from '../assets/modular-interiors/kitchen2.jpg';
@@ -13,7 +13,8 @@ import img6 from '../assets/modular-interiors/kitchen6.avif';
 import img7 from '../assets/modular-interiors/kitchen7.avif';
 import img8 from '../assets/modular-interiors/kitchen8.avif';
 import img9 from '../assets/modular-interiors/kitchen9.jpeg';
-import img10 from '../assets/modular-interiors/kitchen10.jpg';
+import img10 from '../assets/optimized/images/gallery-highlight-1600.webp';
+import img10Small from '../assets/optimized/images/gallery-highlight-800.webp';
 import img11 from '../assets/modular-interiors/kitchen11.jpg';
 
 const kitchenDesigns = [
@@ -26,7 +27,11 @@ const kitchenDesigns = [
   { image: img7, caption: 'Compact Small Spaces' },
   { image: img8, caption: 'Bold Two-Tone Modular' },
   { image: img9, caption: 'Open Concept Modular' },
-  { image: img10, caption: 'Classic Modular Kitchen' },
+  {
+    image: img10,
+    srcSet: `${img10Small} 800w, ${img10} 1600w`,
+    caption: 'Classic Modular Kitchen',
+  },
   { image: img11, caption: 'Mast Kitchen' },
 ];
 

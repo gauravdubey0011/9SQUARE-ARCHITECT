@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import './Showcase.css';
 import showcaseProjects from '../../data/showcaseProjects';
@@ -8,16 +8,25 @@ import ScrollReveal from '../common/ScrollReveal';
 function ShowcaseCard({ project }) {
   const { media, title, slug } = project;
   const [current, setCurrent] = useState(0);
+  const [isInView, setIsInView] = useState(() => !('IntersectionObserver' in window));
+  const cardRef = useRef(null);
   const videoRefs = useRef({});
 
-  const goNext = () => {
+  const goNext = useCallback(() => {
     setCurrent((prev) => (prev + 1) % media.length);
-  };
+  }, [media.length]);
 
-  // Reset to first slide whenever this card's media set changes (e.g. arrow navigation)
   useEffect(() => {
-    setCurrent(0);
-  }, [media]);
+    const node = cardRef.current;
+    if (!node || !('IntersectionObserver' in window)) return undefined;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsInView(entry.isIntersecting);
+    }, { rootMargin: '160px 0px' });
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   // Play the active video, pause every other video
   useEffect(() => {
@@ -26,41 +35,42 @@ function ShowcaseCard({ project }) {
       const vid = videoRefs.current[index];
       if (!vid) return;
 
-      if (index === current) {
+      if (index === current && isInView) {
         vid.currentTime = 0;
         vid.play().catch(() => {});
       } else {
         vid.pause();
       }
     });
-  }, [current, media]);
+  }, [current, isInView, media]);
 
   // Images auto-advance on a timer; videos advance via onEnded instead
   useEffect(() => {
     const activeItem = media[current];
-    if (activeItem.type === 'image') {
+    if (activeItem.type === 'image' && isInView) {
       const timer = setTimeout(goNext, 10000);
       return () => clearTimeout(timer);
     }
     // video case: no timer here, handled by onEnded on the <video>
-  }, [current, media]);
+  }, [current, goNext, isInView, media]);
 
   return (
-    <div className="showcase-card">
+    <div className="showcase-card" ref={cardRef}>
       <div className="showcase-card__image-wrap">
 
         {media.map((item, index) => {
-          const isActive = index === current;
+          const isActive = index === current && isInView;
 
           if (item.type === 'video') {
             return (
               <video
                 key={index}
                 ref={(el) => (videoRefs.current[index] = el)}
-                src={item.src}
                 muted
                 playsInline
+                preload="none"
                 className={`showcase-card__image ${isActive ? 'active' : ''}`}
+                src={isActive ? item.src : undefined}
                 onEnded={isActive ? goNext : undefined}
               />
             );
@@ -69,8 +79,12 @@ function ShowcaseCard({ project }) {
           return (
             <img
               key={index}
-              src={item.src}
+              src={isActive ? item.src : undefined}
+              srcSet={isActive ? item.srcSet : undefined}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               alt={title}
+              loading={isActive ? 'eager' : 'lazy'}
+              decoding="async"
               className={`showcase-card__image ${isActive ? 'active' : ''}`}
             />
           );

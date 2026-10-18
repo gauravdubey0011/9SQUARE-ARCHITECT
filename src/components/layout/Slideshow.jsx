@@ -79,9 +79,9 @@
 import { useState, useRef, useEffect } from 'react';
 import './Slideshow.css';
 
-import video1 from '../../assets/video1.mp4';
-import video2 from '../../assets/video2.mp4';
-import video3 from '../../assets/video3.mp4';
+import video1 from '../../assets/optimized/video1.mp4';
+import video2 from '../../assets/optimized/video2.mp4';
+import video3 from '../../assets/optimized/video3.mp4';
 
 const slides = [
   { video: video1, thought: 'Designing spaces, defining lives.' },
@@ -119,9 +119,10 @@ function Slideshow() {
           <video
             ref={(el) => (videoRefs.current[index] = el)}
             className="slide-video"
-            src={slide.video}
+            src={index === current ? slide.video : undefined}
             muted
             playsInline
+            preload="none"
             autoPlay={index === current}
             onEnded={index === current ? goToNext : undefined}
           />

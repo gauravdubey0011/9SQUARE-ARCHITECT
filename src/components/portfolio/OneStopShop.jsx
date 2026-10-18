@@ -51,7 +51,13 @@ export default function OneStopShop() {
             aria-label={`Explore ${card.title}`}
           >
             <div className="onestop-card__image-wrap">
-              <img src={card.image} alt={card.title} className="onestop-card__image" />
+              <img
+                src={card.image}
+                alt={card.title}
+                loading="lazy"
+                decoding="async"
+                className="onestop-card__image"
+              />
             </div>
             <div className="onestop-card__body">
               <h3 className="onestop-card__title">{card.title}</h3>
